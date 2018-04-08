@@ -1,0 +1,80 @@
+body{
+	background-color: #ddd;
+}
+
+.header-main{
+	background-color: #466798;
+	border-bottom: 1px solid #203f65;
+}
+
+.home-icon{
+	padding: 5px 0px 5px 20px;
+}
+
+.background-holder{
+	height: 300px;
+	background-image: url('assets/cover.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.menu-bar{
+	position: relative;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.profile-outer{
+	position: absolute;
+	bottom: 25px;
+	margin-left: 10px;
+	height: 175px;
+	width: 175px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.profile-outer img{
+	height: 100%;
+	width: 100%;
+	padding: 5px;
+}
+
+.main-nav ul{
+	margin: 0 0 0 195px;
+	padding-left: 0;
+}
+
+.main-nav ul li{
+	list-style: none;
+	display: inline-block;
+	padding: 15px 20px;
+}
+
+.main-nav ul li{
+	border: none;
+}
+
+.main-nav ul li a{
+
+}
+
+@media (min-width: 768px){
+	.main-nav ul li:first-child{
+	border-left: 1px solid #ddd;
+	}
+
+	.main-nav ul li:last-child{
+		border-left: 1px solid #ddd;
+		border-right: 1px solid #ddd;
+	}
+}
