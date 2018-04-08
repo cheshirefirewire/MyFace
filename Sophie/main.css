@@ -1,0 +1,56 @@
+header {
+  width: 100%;
+  background-color: #64C180;
+  border-bottom: 1px solid #063A1F;
+}
+header img {
+  height: 30px;
+  margin: 3px;
+  margin-left: 7%;
+}
+
+.cover {
+  color: #063A1F;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.cover img{
+  width: 100%;
+}
+.cover .nav {
+  margin-left: 20%;
+  border-left: 1px solid #063A1F;
+}
+.cover .nav li{
+  border-right: 1px solid #063A1F;
+  padding: 0 20px 0 20px;
+  font: 12px;
+}
+.cover .nav li a {
+  color: #135322;
+  font-weight: bold;
+  font-family: Helvetica;
+  font-size: 1.2em;
+}
+.cover .row{
+  margin: 0;
+  border: 1px solid #063A1F;
+  border-radius: 0 0 8px 8px;
+  position: relative;
+}
+ .cover .profile-picture  {
+   float: left;
+   width: 200px;
+   height: auto;
+   margin: 15px;
+   top: -180px;
+   border-radius: 8px;
+   border: 1px solid #063A1F;
+   position: absolute;
+ }
+
+ .for-border {
+   border: 5px solid white;
+   border-radius: 8px;
+ }
