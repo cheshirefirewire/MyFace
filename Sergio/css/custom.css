@@ -1,0 +1,31 @@
+/*
+.header-styles {
+  background: url('images/myface_logo.png') no-repeat;
+  background-position: 19.5%, 10%;
+  background-color: #48669C;
+  height: 5%;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+*/
+.nature_img {
+  width: 100%;
+  height: 470px;
+}
+.bottom-navbar-border-styles {
+  border: 1px solid #D2D2D2;
+  border-radius: 0 0 5px 5px;*/
+}
+.navbar-nav li {
+  color: #435B92;
+  font-size: 1.2em;
+  position: relative;
+  height: 100%;
+  left: 350px;
+  border-right: 1px solid #D2D2D2;
+  padding: 1% 1% 1% 1%;
+}
+.navbar-nav li:nth-child(1) {
+  border-left: 1px solid #D2D2D2;
+}
