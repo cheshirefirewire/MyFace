@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application for App</title>
+    <link rel="stylesheet" type="text/css" href="http://dimsemenov-static.s3.amazonaws.com/dist/magnific-popup.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <section class="main">
+            <img src="image/myface_logo.png" width="32">
+        </section>
+    </header>
+    <section class="main">
+        <div class="banner">
+            <img class="banner_holder" src="image/cover.jpg">
+            <img class="profile" id="banner-img" src="image/profile.jpg">
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="">Blog</a>
+                </li>
+                <li>
+                    <a href="">Galleries</a>
+                </li>
+            </ul>
+        </div>
+        <section class="content">
+            <aside>
+                <div id="arrow">
+                    <h3>
+                        <i id="arrow-down" class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                        <b>About</b>
+                    </h3>
+                </div>
+                <div id="asideNav">
+                    <div id="placeholder"></div>
+                    <script id="entry-template" type="text/x-handlebars-template">
+                        <div class="body">
+                            <ul>
+                                <li>Name: {{Name}}</li>
+                                <li>Location: {{Location}}</li>
+                                <li>Birthday: {{Birthday}}</li>
+                                <li>Occupation: {{Occupation}}</li>
+                                <li>Relationship: {{Relationship}}</i></li>
+                                <li>Interested in: {{InterestedIn}}</li>
+                            </ul>
+                        </div>
+                    </script>
+                </div>
+            </aside>
+        </section>
+
+
+        <!-- <div id="bannerImg"></div> -->
+        <script id="banner-img" type="text/x-handlebars-template">
+            <div class="body">
+                    <img class="profile" src="{{profile_img}}">
+            </div>
+        </script>
+        <script src="./handlebars-v4.0.11.js"></script>
+        <script src="./index.js"></script>
+</body>
+
+</html>
