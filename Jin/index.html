@@ -2,8 +2,12 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="main.css" type="text/css">
+<script src="js/handlebars.js"></script>
+<script src="js/index.js" defer></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 </head>
 <body>
 <header class="header-main col-xs-12">
@@ -12,26 +16,73 @@
 	</a>
 </header>
 <section class="banner-section col-xs-12 col-lg-8 offset-lg-2">
-	<div class="background-holder">
-		
-	</div>
-	<div class="menu-bar">
-		<div class="profile-holder">
-			<div class="profile-outer">
-				<img src="assets/profile.png"/>
-			</div>
+	<div class="p-15">
+		<div id="background-outer">
+
 		</div>
-		<nav class="main-nav">
-			<ul>
-				<li>
-					<a href="#">Blog</a>
-				</li>
-				<li>
-					<a href="#">Galleries</a>
-				</li>
-			</ul>
-		</nav>
+		<div class="menu-bar">
+			<div class="profile-holder">
+				<div class="profile-outer" id="profile-outer">
+					
+				</div>
+			</div>
+			<nav class="main-nav">
+				<ul>
+					<li>
+						<a href="#">Blog</a>
+					</li>
+					<li>
+						<a href="#">Galleries</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</div>
 </section>
+
+<section class="col-xs-12 col-lg-8 offset-lg-2">
+	<div class="col-lg-4 col-xs-12">
+		<div class="box">
+			<div class="box-head" id="user-data-head">
+				<strong><i class="fas fa-caret-down"></i> About</strong>
+			</div>
+			<div class="box-body open" id="box-body">
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<script id="cover-img" type="text/x-handlebars-template">
+	<div class="background" style="background-image: url('{{src}}')"></div>
+</script>
+
+<script id="profile-img" type="text/x-handlebars-template">
+	<img src="{{profileImg}}"/>
+</script>
+
+<script id="user-data" type="text/x-handlebars-template">
+	<ul class="user-data-holder" id="user-data-holder">
+		<li>
+			Name: {{name}}
+		</li>
+		<li>
+			Location: {{location}}
+		</li>
+		<li>
+			Birthday: {{birthday}}
+		</li>
+		<li>
+			Occupation: {{occupation}}
+		</li>
+		<li>
+			Relationship Status: {{relationship}}
+		</li>
+		<li>
+			Interested in: {{interest}}
+		</li>
+	</ul>
+</script>
+
 </body>
 </html>
