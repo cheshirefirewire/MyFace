@@ -1,0 +1,161 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+wrapper, article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    background-color: #E9EAEE;
+}
+.header{
+    z-index: 1;
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 50px;
+    background: #46629e;
+}
+.hidden{
+    display: none;
+}
+.header img {
+  padding: 10px 0px 0px 0px;
+} /*End header here*/
+
+.main {
+    margin: auto;
+    width: 80%;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+}
+
+.banner{
+    position: relative;
+    margin-top: 40px;
+}
+.banner img.banner_holder {
+    height: 275px;
+    width: 100%;
+    display: block;
+}
+.banner img.profile {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 79px 0px 9px 7px;
+    background: #f5f5f5;
+    position: absolute;
+    bottom: -16px;
+    left: 10px;
+    height: auto;
+    width: 16%;
+}/* .banner style  ends here*/
+
+.nav {
+    height: 33px;
+    padding-top: 7px;
+    background-color: #f5f5f5;
+    margin-top: 0px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+}
+.nav ul {
+    list-style-type: none;
+    background-color: #f5f5f5;
+    margin-left: 22%;
+    display: flex;
+    height: 5px;
+}
+.nav ul li {
+    display: inline-block;
+    padding: 6px;
+    height: 17px;
+    margin: 2px;
+    margin-top: -8px;
+}
+.nav ul li a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}/* /nav style  ends here*/
+
+#arrow{
+    border-radius: 5px;
+    background: #fff;
+    border:1px solid #ccc;
+}
+#arrow h3{
+    background: #f5f5f5;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+}
+#arrow h3 i{
+    margin: 0 8px 0 0;
+}
+#asideNav{
+    border-radius: 5px;
+    background: #fff;
+    border:1px solid #ccc;
+}
+#asideNav ul{
+    padding: 0 8px;
+    list-style-type: none;
+}
+#asideNavul li :last-child{
+    border-bottom: 1px solid #ccc;
+}
+#asideNav ul i{
+    float: right;
+    cursor: pointer;
+}
+#asideNav ul li{
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+section.content{
+    display: flex;
+    margin-top: 20px;
+}
+section.content aside{
+    flex: 2 3 10%;
+}/* /aside style ends here*/
+
+/*@madia*/
+@media only screen and (max-width: 600px){
+        section.main{
+        width: 100%;
+        padding: 0 10px 0 10px;
+        display: column;
+        box-sizing: border-box;
+    }
+    .nav ul li{
+        width: 100%;
+    }
+    section.content{
+        display: block;
+    }
+    section.content aside {
+        margin-left: 0;
+    }
+}
