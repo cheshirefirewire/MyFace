@@ -7,12 +7,15 @@
     <title>My Face Application</title>
     <!--Bootstrap files -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!--customer css file -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--custom css file -->
     <link rel="stylesheet" type="text/css" href="css/custom.css">
-    <!--customer css file -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <!--custom css file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./handlebars-v4.0.11.js"></script>
+    <script src="./index.js" defer></script>
   </head>
 
   <style>
@@ -33,6 +36,7 @@
 
   <body>
     <div class="container-fullwidth">
+
       <!-- start of top navbar header -->
       <nav class="navbar navbar-static-top header-styles"></nav>
       <!-- end of top navbar header -->
@@ -41,16 +45,23 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div>
-              <img class="nature_img" src="images/nature.jpg"/>
-            </div>
+
+            <!-- background image Handlebars place holder -->
+            <div class="container" id="background-pic-placeHolder-div"></div>
+            <script id="background-pic-template" type="text/x-handlebars-template">
+              <div class="bg-img-class">
+                <img class="nature_img" src={{backgroundPic}}>   
+              </div>
+            </script>
+            <!-- end background image Handlebars script/place holder -->
+
           </div>
         </div>
       </div>
       <!-- end of nature image div -->
 
       <!-- start of bottom navbar -->
-      <div class="container">
+      <div class="container nav-cont">
         <nav class="navbar-light navbar-expand-md bottom-navbar-border-styles">
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse_target">
@@ -67,10 +78,60 @@
               </li>
             </ul>
           </div>
-
         </nav>
+        <!-- profile image Handlebars place holder -->
+        <div class="container" id="profile-pic-placeHolder-div"></div>
+        <script id="profile-pic-template" type="text/x-handlebars-template">
+          <div>
+            <img class="profile_img" src={{profilePic}}>   
+          </div>
+        </script>
+        <!-- end profile image Handlebars script/place holder -->
+                         
       </div>
       <!-- end of bottom navbar -->
+
+      <!-- start of bottom vertical side navbar container and new row -->
+      <div class="container">
+        <div class="row">
+
+          <!-- start of vertical side navbar -->
+          <div class="col-md-4">
+
+            <!-- start of 'about' div -->
+            <div class="container btm-nav-header">
+              <h5 class="about_h5" onclick="toggleVerticalNavUpDown('side-nav-placeHolder-div')"><i id="arrow" class="fa fa-arrow-circle-up" aria-hidden="true"></i> about</h5>
+            </div>
+            <!-- end of 'about' div -->
+
+            <!-- start of Handlebars template to render Vertical Side Nav script -->
+            <div class="container" id="side-nav-placeHolder-div"></div>
+
+            <script id="side-nav-template" type="text/x-handlebars-template">
+              <div>
+                <ul id="verticalSide-nav-ul">
+                  <li><b>name:</b> {{name}}</li>
+                  <li><b>location:</b> {{location}}</li>
+                  <li><b>birthday:</b> {{birthday}}</li>
+                  <li><b>occupation:</b> {{occupation}}</li>
+                  <li><b>relationship status:</b> {{relationshipStatus}}</li>
+                  <li><b>interested:</b> {{interested}}</li>
+                </ul>
+              </div>
+            </script>
+            <!-- end of Handlebars template to render Vertical Side Nav script -->
+          
+          </div>
+          <!-- end of vertical side navbar -->
+          
+
+
+          <div class="col-md-8">
+            <div class="container body">
+          </div>
+            
+      </div>
+      <!-- end of bottom vertical side navbar container and new row -->
 
     </div>
   </body>
