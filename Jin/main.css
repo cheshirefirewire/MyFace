@@ -1,0 +1,137 @@
+body{
+	background-color: #e9eaed;
+	color: #6a7480;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.p-15{
+	padding: 0 15px;
+}
+
+.header-main{
+	background-color: #466798;
+	border-bottom: 1px solid #203f65;
+}
+
+.home-icon{
+	padding: 5px 0px 5px 35px;
+}
+
+.background{
+	height: 300px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.menu-bar{
+	position: relative;
+	background-color: #fff;
+	border: 1px solid #d2d2d2;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.profile-outer{
+	position: absolute;
+	bottom: 20px;
+	margin-left: 10px;
+	height: 175px;
+	width: 175px;
+	border: 1px solid #d2d2d2;
+	background-color: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.profile-outer img{
+	height: 100%;
+	width: 100%;
+	padding: 5px;
+}
+
+.main-nav ul{
+	margin: 0 0 0 195px;
+	padding-left: 0;
+}
+
+.main-nav ul li{
+	list-style: none;
+	display: inline-block;
+	padding: 15px 20px;
+}
+
+.main-nav ul li{
+	border: none;
+}
+
+.main-nav ul li a{
+	font-size: 1.2em;
+	color:#3b599e;
+}
+
+@media (min-width: 768px){
+	.main-nav ul li:first-child{
+	border-left: 1px solid #d2d2d2;
+	}
+
+	.main-nav ul li:last-child{
+		border-left: 1px solid #d2d2d2;
+		border-right: 1px solid #d2d2d2;
+	}
+}
+
+.box{
+	background-color: #fff;
+	margin-top: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	border: 1px solid #d2d2d2;
+}
+
+.box-head{
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: #f9fafb;
+	padding: 10px 15px;
+	border-bottom: 1px solid #d2d2d2;
+}
+
+.box-body.open{
+	display: block;
+}
+
+.box-body{
+	display: none;
+}
+
+.user-data-holder{
+	list-style-type: none;
+	padding: 0 15px;
+	margin-bottom: 0;
+}
+
+#user-data-head:hover{
+	cursor: pointer;
+}
+
+.box .user-data-holder li{
+	padding: 15px 0;
+	border-bottom: 1px solid #d2d2d2;
+	font-size: 1em;
+}
+
+.box .user-data-holder li:last-child{
+	border-bottom: none;
+}
