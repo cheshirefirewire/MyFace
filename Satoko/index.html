@@ -1,50 +1,94 @@
-<<<<<<< HEAD
 <!DOCTYPE HTML>
 <html>
-<head>
-	<title>Satoko's MyFace Page</title>
-	<!--Bootstrap files -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel = "stylesheet" href = "main.css" />
 
+<head>
+    <title>Satoko's MyFace Page</title>
+    <!--Bootstrap files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css" />
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="handlebars-v4.0.11.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
 </head>
 
 <body>
-	<header class = "fixed-top">
-		<img src = "images/myface_logo.png" class = "logo" />
-	</header>
-	<section class = "content-wrapper">
-		<div class = "row">
-			<section class = "center col-md-9">
-				<img src = "images/cover.jpg" class = "cover-img" />
-				<img src = "images/profile.png" class = "profile-img" />
-				<nav class = "navbar">
-					<ul class = "nav">
-						<li class = "nav-item">blog</li>
-						<li class = "nav-item">gallery</li>
-					</ul>
-				</nav>
-			</section>
-		</div>
-		<div class = "row">
-			<section class = "center col-md-9 content">
-				<aside class = "col-md-4">
-					<p>text</p>
-				</aside>
-				<main class = "col-md-8">
-					<p>text2</p>
-				</main>
-			</section>
-		</div>
+	<div class="container-fluid">
+    <header class="fixed-top page-header">
+        <img src="images/myface_logo.png" class="logo" />
+    </header>
+    
+    <section class="content-wrapper">
+        <div class="row">
+            <section class="center col-md-10">
+                <div id="coverOuter">
+                </div>
+                <div id="profileOuter">
+                </div>
+                <nav class="navbar">
+                	<ul class="nav">
+                        <li class="nav-item">
+                        	<a class="nav-link" href="#">blog</a>
+                        </li>
+                        <li class="nav-item">
+                        	<a class="nav-link" href="#">gallery</a>
+                       	</li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+        <div class="row">
+            <section class="center col-md-10 content">
+                <aside class="user-info col-lg-4 col-md-5">
+                	<header class="content-header">
+                		<div id="aboutHeader">
+                			<i class="fas fa-sort-down"></i> about
+                		</div>
+                	</header>
+                    <div id="about"></div>
+                </aside>
+                <main class="blog col-lg-8 col-md-7">
+                	<div class="new-post">
+                    	<header class="content-header">
+                    	</header>
+                    </div>
+                </main>
+            </section>
+        </div>
 
-
-	</section>
-
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script id="cover-img-template" type="text/x-handlebars-template">
+        	<div class="entry">
+                <div class="body">
+                	<img src="{{coverImg}}" class="cover-img" />
+                </div>
+            </div>
+        </script>
+        <script id="profile-img-template" type="text/x-handlebars-template">
+        	<div class="entry">
+                <div class="body">
+                	<img src="{{profileImg}}" class="profile-img" />
+                </div>
+            </div>
+        </script>
+        <script id="about-template" type="text/x-handlebars-template">
+            <div class="entry">
+                <div class="body">
+                    <ul id="aboutList" class="about-list">
+                        <li>name: {{name}}</li>
+                        <li>location: {{location}}</li>
+                        <li>birthday: {{birthday}}</li>
+                        <li>occupation: {{occupation}}</li>
+                        <li>relationship status: {{relationshipStatus}}</li>
+                        <li>interested in: {{interestedIn}}</li>
+                    </ul>
+                </div>
+            </div>
+        </script>
+    </section>
+</div>
 </body>
+
 </html>
-=======
-<p>Satoko's MyFace Page</p>
->>>>>>> f31dba079b1b740a85283de5979df1f45e4c148d
