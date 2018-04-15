@@ -18,3 +18,11 @@ var html = template(context2);
 
 var placeHolder = document.getElementById("placeHolder");
 placeHolder.innerHTML = html;
+
+$.ajax({
+  method: "GET",
+  url: "http://localhost:3000/user",
+  dataType: "jsonp"
+}).then(function(data){
+  console.log('data',data);
+})
