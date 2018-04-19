@@ -1,70 +1,154 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application for App</title>
-    <link rel="stylesheet" type="text/css" href="http://dimsemenov-static.s3.amazonaws.com/dist/magnific-popup.css">
+    <title></title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="header">
-        <section class="main">
-            <img src="image/myface_logo.png" width="32">
-        </section>
+    <!-- Logo -->
+    <header class="header-main col-xs-12">
+        <div class="container">
+            <img src="image/myface_logo.png" alt="">
+        </div>
     </header>
-    <section class="main">
-        <div class="banner">
-            <img class="banner_holder" src="image/cover.jpg">
-            <img class="profile" id="banner-img" src="image/profile.jpg">
+    <!-- banner -->
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="profile-holder" id="profile-holder"></div>
         </div>
-        <div class="nav">
-            <ul>
-                <li>
-                    <a href="">Blog</a>
-                </li>
-                <li>
-                    <a href="">Galleries</a>
-                </li>
-            </ul>
-        </div>
-        <section class="content">
-            <aside>
+        <!-- nav -->
+        <ul class="nav">
+            <li>
+                <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#">Galleries</a>
+            </li>
+        </ul>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <!-- Aside -->
+            <div class="col-xs-6 col-md-4">
                 <div id="arrow">
-                    <h3>
+                    <h3 id="toggleArrow">
                         <i id="arrow-down" class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                        <i id="arrow-up" class="fa fa-arrow-circle-up" aria-hidden="true"></i>
                         <b>About</b>
                     </h3>
                 </div>
-                <div id="asideNav">
-                    <div id="placeholder"></div>
-                    <script id="entry-template" type="text/x-handlebars-template">
-                        <div class="body">
-                            <ul>
-                                <li>Name: {{Name}}</li>
-                                <li>Location: {{Location}}</li>
-                                <li>Birthday: {{Birthday}}</li>
-                                <li>Occupation: {{Occupation}}</li>
-                                <li>Relationship: {{Relationship}}</i></li>
-                                <li>Interested in: {{InterestedIn}}</li>
-                            </ul>
-                        </div>
-                    </script>
+                <div class="asideNav">
+                    <div id="navHolder"></div>
                 </div>
-            </aside>
-        </section>
-
-
-        <!-- <div id="bannerImg"></div> -->
-        <script id="banner-img" type="text/x-handlebars-template">
-            <div class="body">
-                    <img class="profile" src="{{profile_img}}">
             </div>
-        </script>
-        <script src="./handlebars-v4.0.11.js"></script>
-        <script src="./index.js"></script>
+            <!-- article -->
+            <div class="col-xs-12 col-md-8">
+                <article>
+                    <div id="Blog">
+                        <div class="articleContaniner">
+                             <h3>Write Something!</h3>
+                            <form class="box-body">
+                                <input type="text" placeholder="Topic:">
+                                <textarea></textarea>
+                            </form> 
+                        </div>
+                        <div class="articleArea">
+                            <h3>Lorem Ipsum is simply?</h3>
+                            <ul>
+                                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                    been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                                    took a galley of type and scrambled it to make a type specimen book. It has survived
+                                    not only five centuries, but also the leap into electronic typesetting, remaining essentially
+                                    unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                                    Lorem Ipsum passages, and more .</li>
+                            </ul>
+                            <form class="articleArea1">
+                                <i>
+                                    <img src="image/profile-small.png" title="Comments" width="32"> Lorem Ipsum is simply dummy text of the printing and
+                                </i>
+                                <textarea>Enter your comment here</textarea>
+                            </form>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!-- Connet to Profile -->
+    <script id="profileImg" type="text/x-handlebars-template">
+        <div class="entry1">
+            <div class="body">
+                <img class="profile" src="{{profile_img}}">
+            </div>
+        </div>
+    </script>
+    <!-- Connet to Aside -->
+    <script id="asideNav" type="text/x-handlebars-template">
+        <div class="entry">
+            <div class="body">
+                <ul>
+                    <li>name:
+                        <input value=“{{name}}” readonly></input>
+                        <span class=“fieldEditor”>&#9998;</span>
+                    </li>
+                    <li>Location:
+                        <input value="{{Location}}" readonly></input>
+                        <span class=“fieldEditor”>&#9998;</span>
+                    </li>
+                    <li>Birthday:
+                        <input value="{{Birthday}}" readonly></input>
+                        <span class=“fieldEditor”>&#9998;</span>
+                    </li>
+                    <li>Occupation:
+                        <input value="{{Occupation}}" readonly></input>
+                        <span class=“fieldEditor”>&#9998;</span>
+                    </li>
+                    <li>Relationship:
+                        <input value="{{Relationship}}" readonly></input>
+                        <span class=“fieldEditor”>&#9998;</span>
+                        </i>
+                    </li>
+                    <li>InterestedIn:
+                        <input value="{{InterestedIn}}" readonly></input>
+                        <span class=“fieldEditor”>&#9998;</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </script>
+
+    <!-- article -->
+    <script id="article" type="text/x-handlebars-template">
+        <div class="entry1">
+            <div class="body">
+                
+            </div>
+        </div>
+    </script>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <script src=""></script>
+    <script src="handlebars-v4.0.11.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

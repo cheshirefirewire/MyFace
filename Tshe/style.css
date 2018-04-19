@@ -22,81 +22,55 @@ wrapper, article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-body {
-    background-color: #E9EAEE;
+header{
+    background-color: #3d99d3;
+    height: 40px;
 }
-.header{
-    z-index: 1;
-    position: fixed;
-    left: 0px;
-    width: 100%;
-    top: 0px;
-    height: 50px;
-    background: #46629e;
+header img{
+    padding: 10px 0px 0px 0px;
 }
-.hidden{
-    display: none;
-}
-.header img {
-  padding: 10px 0px 0px 0px;
-} /*End header here*/
 
-.main {
+.container{
     margin: auto;
     width: 80%;
-    padding: 0;
-    display: flex;
-    flex-flow: column;
+}
+.jumbotron-fluid{
+    margin: 0px;
+    background-image: url("image/cover.jpg");
+    background-size: cover;
+    padding: 150px;
+    background-repeat: no-repeat, repeat;
+    background-position: center;
 }
 
-.banner{
-    position: relative;
-    margin-top: 40px;
-}
-.banner img.banner_holder {
-    height: 275px;
-    width: 100%;
-    display: block;
-}
-.banner img.profile {
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 79px 0px 9px 7px;
-    background: #f5f5f5;
+.entry1{
     position: absolute;
-    bottom: -16px;
-    left: 10px;
-    height: auto;
-    width: 16%;
-}/* .banner style  ends here*/
-
-.nav {
-    height: 33px;
-    padding-top: 7px;
-    background-color: #f5f5f5;
-    margin-top: 0px;
-    border: 1px solid #ccc;
-    border-radius: 0 0 5px 5px;
+    bottom: 20px;
+    left: 24px;   
 }
-.nav ul {
-    list-style-type: none;
-    background-color: #f5f5f5;
-    margin-left: 22%;
+.profile{
+    height: 154px;
+    width: 156px;
+}
+.nav{
+    background: #eceeef;
     display: flex;
-    height: 5px;
+    padding-left: 155px;
+    margin-bottom: 0;
+    list-style: none;
 }
-.nav ul li {
-    display: inline-block;
-    padding: 6px;
-    height: 17px;
-    margin: 2px;
-    margin-top: -8px;
+
+
+.row .col-md-4{
+/*   padding: 5px;*/
+   border-color: #efecec;
 }
-.nav ul li a {
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-}/* /nav style  ends here*/
+.row .col-md-8{
+/*   padding: 5px;*/
+   border-color: 1px solid;
+}
+
+
 
 #arrow{
     border-radius: 5px;
@@ -112,50 +86,150 @@ body {
 #arrow h3 i{
     margin: 0 8px 0 0;
 }
-#asideNav{
+.asideNav{
     border-radius: 5px;
     background: #fff;
     border:1px solid #ccc;
 }
-#asideNav ul{
-    padding: 0 8px;
+.asideNav ul{
+    margin-top: 0px;
+    margin-bottom: 0rem; 
+    padding: 0 16px;
     list-style-type: none;
 }
-#asideNavul li :last-child{
-    border-bottom: 1px solid #ccc;
-}
-#asideNav ul i{
+.asideNav ul i{
     float: right;
     cursor: pointer;
 }
-#asideNav ul li{
+.asideNav ul li{
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+h3 #arrow-up{
+  display: none;
+} /*Aside and here*/
+
+.article{
+    flex: 1 3 65%;
+    padding: 0 0 0 5px;
+}
+.articleContaniner {
+    border-radius: 5px;
+    background: #fff;
+    border:1px solid #ccc;
+}
+.articleContaniner  h3{
+    background: #f5f5f5;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+}
+article .articleContaniner ul li:last-child{
+    border-bottom: 0;
+}
+article .articleContaniner h3 {
+    font-weight: bold;
+}
+article .articleContaniner input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 2px;
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+article .box-body {
+    padding: 10px;
+}
+article .box-body textarea {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+
+.articleArea{
+    /* background: #fff; */
+    border:1px solid #ccc;
+    margin-top: 20px;
+}
+.articleArea h3{
+    background: #f5f5f5;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+}
+.articleArea ul{
+    padding: 0 10px;
+    list-style-type: none;
+}
+.articleArea ul li{
     padding: 10px 0;
     border-bottom: 1px solid #ccc;
 }
 
-section.content{
-    display: flex;
-    margin-top: 20px;
+article .articleArea textarea {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 3px;
+} 
+article .articleArea1 {
+    padding: 10px;
 }
-section.content aside{
-    flex: 2 3 10%;
-}/* /aside style ends here*/
+article .articleArea1 textarea {
+    color: #8c8888;
+    font-size: 15px;
+}
 
-/*@madia*/
-@media only screen and (max-width: 600px){
-        section.main{
-        width: 100%;
-        padding: 0 10px 0 10px;
-        display: column;
-        box-sizing: border-box;
-    }
-    .nav ul li{
-        width: 100%;
-    }
-    section.content{
-        display: block;
-    }
-    section.content aside {
-        margin-left: 0;
-    }
-}
+/* article ends here*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+    <header class="header-main col-xs-12">
+        <a href="#">
+        <img src="image/myface_logo.png" alt="">
+         </a>
+    </header>
+    <section class="bannser-section col-xs-12 col-lg-8 offset-lg-2">
+        <div class="backgroung-holder">
+
+        </div>
+        <div class="menu-bar">
+            <div class="profile-holder">
+                <img src="image/profile.png" />
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">Galleries</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <script id="banner-img" type="text/x-handlebars-template">
+        <div class="body">
+            <img class="profile" src="{{profile_img}}">
+        </div>
+    </script>*/
