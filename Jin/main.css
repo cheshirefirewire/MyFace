@@ -135,3 +135,16 @@ body{
 .box .user-data-holder li:last-child{
 	border-bottom: none;
 }
+
+.box .user-data-holder li span{
+	float: right;
+}
+
+.box .user-data-holder li span:hover{
+	cursor: pointer;
+}
+
+.box .user-data-holder li input[readonly]{
+	border: 2px solid transparent;
+	color: #6a7480;
+}
