@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta charset="UTF-8">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="main.css" type="text/css">
 <script src="js/handlebars.js"></script>
@@ -47,7 +48,7 @@
 				<strong><i class="fas fa-caret-down"></i> About</strong>
 			</div>
 			<div class="box-body open" id="box-body">
-
+				
 			</div>
 		</div>
 	</div>
@@ -63,26 +64,35 @@
 
 <script id="user-data" type="text/x-handlebars-template">
 	<ul class="user-data-holder" id="user-data-holder">
+		<li>Name: <input value="{{name}}" readonly></input>
+			<span><i class="far fa-edit"></i></span>
 		<li>
-			Name: {{name}}
+			Location: <input value="{{location}}" readonly></input>
+			<span><i class="far fa-edit"></i></span>
 		</li>
 		<li>
-			Location: {{location}}
+			Birthday: <input value="{{birthday}}" readonly></input>
+			<span><i class="far fa-edit"></i></span>
 		</li>
 		<li>
-			Birthday: {{birthday}}
+			Occupation: <input value="{{occupation}}" readonly></input>
+			<span><i class="far fa-edit"></i></span>
 		</li>
 		<li>
-			Occupation: {{occupation}}
+			Relationship Status: <input value="{{relationship}}" readonly></input>
+			<span><i class="far fa-edit"></i></span>
 		</li>
 		<li>
-			Relationship Status: {{relationship}}
-		</li>
-		<li>
-			Interested in: {{interest}}
+			Interested in: <input value="{{interest}}" readonly></input>
+			<span><i class="far fa-edit"></i></span>
 		</li>
 	</ul>
 </script>
 
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
 </body>
 </html>
