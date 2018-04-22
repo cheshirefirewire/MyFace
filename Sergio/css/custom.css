@@ -73,7 +73,7 @@
   in linear fashion with 0 delay
   */
   transition: height 0.3s linear 0s;  
-  height: 340px;
+  height: auto;
   z-index: 10000;
   border: 1px solid #D2D2D2;
   border-top: 0;
@@ -95,6 +95,11 @@
 }
 #verticalSide-nav-ul li:nth-child(6) {
   border-bottom: 0;
+}
+.verNav-input {
+  width: 35%;
+  border:1px solid #cccccc;
+  border-radius: 3px 3px 3px 3px;
 }
 .body {
   border: 1px solid #D2D2D2;
