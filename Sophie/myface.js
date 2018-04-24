@@ -10,7 +10,7 @@ var profile = {
     interest: "humane objects"
 };
 
-var source = document.getElementById('profile-template').innerHTML;
+var source = document.getElementById('about-template').innerHTML;
 var template = Handlebars.compile(source);
 var html = template(profile);
 document.getElementById("about-placeholder").innerHTML = html;
@@ -24,3 +24,21 @@ var bGsource = document.getElementById('bg-template').innerHTML;
 var bGtemplate = Handlebars.compile(bGsource);
 var bGhtml = bGtemplate(profile);
 document.getElementById("bg-placeholder").innerHTML = bGhtml;
+
+var open = false;
+var about = document.getElementById('about');
+about.addEventListener("click", function(){
+  if (open === false) {
+    //open it
+    open = true;
+    document.getElementById('open-triangle').style.display = "inline-block";
+    document.getElementById('about-placeholder').style.display = "inline-block";
+    document.getElementById('closed-triangle').style.display = "none";
+  } else {
+    open = false;
+    //close it
+    document.getElementById('open-triangle').style.display = "none";
+    document.getElementById('about-placeholder').style.display = "none";
+    document.getElementById('closed-triangle').style.display = "inline-block";
+  }
+});
