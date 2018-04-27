@@ -3,7 +3,7 @@
 
 <head>
     <title>Satoko's MyFace Page</title>
-    <!--Bootstrap files -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css" />
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
@@ -14,81 +14,103 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
     <script src="index.js" defer></script>
 </head>
-
 <body>
 	<div class="container-fluid">
-    <header class="fixed-top page-header">
-        <img src="images/myface_logo.png" class="logo" />
-    </header>
-    
-    <section class="content-wrapper">
-        <div class="row">
-            <section class="center col-md-10">
-                <div id="coverOuter">
-                </div>
-                <div id="profileOuter">
-                </div>
-                <nav class="navbar">
-                	<ul class="nav">
-                        <li class="nav-item">
-                        	<a class="nav-link" href="#">blog</a>
-                        </li>
-                        <li class="nav-item">
-                        	<a class="nav-link" href="#">gallery</a>
-                       	</li>
-                    </ul>
-                </nav>
-            </section>
-        </div>
-        <div class="row">
-            <section class="center col-md-10 content">
-                <aside class="user-info col-lg-4 col-md-5">
-                	<header class="content-header">
-                		<div id="aboutHeader">
-                			<i class="fas fa-sort-down"></i> about
-                		</div>
-                	</header>
-                    <div id="about"></div>
-                </aside>
-                <main class="blog col-lg-8 col-md-7">
-                	<div class="new-post">
-                    	<header class="content-header">
-                    	</header>
-                    </div>
-                </main>
-            </section>
-        </div>
+	    <header class="fixed-top page-header">
+	        <img src="images/myface_logo.png" class="logo" />
+	    </header>
+	    
+	    <section class="content-wrapper">
+	        <div class="row">
+	            <section class="center col-md-10">
+	                <div id="coverOuter">
+	                </div>
+	                <div id="profileOuter">
+	                </div>
+	                <nav class="navbar">
+	                	<ul class="nav">
+	                        <li class="nav-item">
+	                        	<a class="nav-link" href="#">blog</a>
+	                        </li>
+	                        <li class="nav-item">
+	                        	<a class="nav-link" href="#">gallery</a>
+	                       	</li>
+	                    </ul>
+	                </nav>
+	            </section>
+	        </div>
+	        <div class="row">
+	            <section class="center col-md-10 content">
+	                <aside class="user-info col-lg-4 col-md-5">
+	                	<header class="content-header">
+	                		<div id="aboutHeader" class="icon-wrap"><i class="fas fa-sort-down"></i></div> about
+	                	</header>
+	                    <div id="about"></div>
+	                </aside>
+	                <main class="blog col-lg-8 col-md-7">
+	                	<div class="new-post">
+	                    	<header class="content-header">write something!</header>
+	                    	<div class="post-container">
+	                    		<form class="blog-input">
+	                    			<input type="text" placeholder="topic" />
+	                    			<textarea></textarea>
+	                    		</form>
+	                    	</div>
+	                    </div>
+	                    <div class="article">
+	                    	<header class="content-header">lorem ipsum dolor <time datetime="2014-08-03">(8/3/2014)</time></header>
+	                    	<div class="post-container article-div">
+	                    		<ul class="article-content">
+	                    			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	                    			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	                    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	                    			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+	                    			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+	                    			<li>
+	                    				<form>
+	                    					<input class="comment" type="text" placeholder="enter your comment here" />
+	                    				</form>
+	                    			</li>
+	                    		</ul>
+	                    		<div>
+	                    	</div>
+	                    </div>
+	                </main>
+	            </section>
+	        </div>
 
-        <script id="cover-img-template" type="text/x-handlebars-template">
-        	<div class="entry">
-                <div class="body">
-                	<img src="{{coverImg}}" class="cover-img" />
-                </div>
-            </div>
-        </script>
-        <script id="profile-img-template" type="text/x-handlebars-template">
-        	<div class="entry">
-                <div class="body">
-                	<img src="{{profileImg}}" class="profile-img" />
-                </div>
-            </div>
-        </script>
-        <script id="about-template" type="text/x-handlebars-template">
-            <div class="entry">
-                <div class="body">
-                    <ul id="aboutList" class="about-list">
-                        <li>name: {{name}}</li>
-                        <li>location: {{location}}</li>
-                        <li>birthday: {{birthday}}</li>
-                        <li>occupation: {{occupation}}</li>
-                        <li>relationship status: {{relationshipStatus}}</li>
-                        <li>interested in: {{interestedIn}}</li>
-                    </ul>
-                </div>
-            </div>
-        </script>
-    </section>
-</div>
+	        <script id="cover-img-template" type="text/x-handlebars-template">
+	        	<div class="entry">
+	                <div class="body">
+	                	<img src="{{coverImg}}" class="cover-img" />
+	                </div>
+	            </div>
+	        </script>
+	        <script id="profile-img-template" type="text/x-handlebars-template">
+	        	<div class="entry">
+	                <div class="body">
+	                	<img src="{{profileImg}}" class="profile-img" />
+	                </div>
+	            </div>
+	        </script>
+	        <script id="about-template" type="text/x-handlebars-template">
+	            <div class="entry">
+	                <div class="body">
+	                    <ul id="aboutList" class="about-list">
+	                        <li>name: <input id="input" label="name" value="{{name}}" readonly><span class='pencil'>&#9998</span></li>
+	                        <li>location: <input label="location" value="{{location}}" readonly><span class='pencil'>&#9998</span></li>
+	                        <li>birthday: <input label="birthday" value="{{birthday}}" readonly><span class='pencil'>&#9998</span></li>
+	                        <li>occupation: <input label="occupation" value="{{occupation}}" readonly><span class='pencil'>&#9998</span></li>
+	                        <li>relationship status: <input label="relationshipStatus" value="{{relationshipStatus}}" readonly><span class='pencil'>&#9998</span></li>
+	                        <li>interested in: <input label="interestedIn" value="{{interestedIn}}" readonly><span class='pencil'>&#9998</span></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </script>
+	    </section>
+	</div>
 </body>
 
 </html>

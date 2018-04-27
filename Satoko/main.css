@@ -68,6 +68,10 @@ nav li:last-child {
 	border-radius: 8px 8px 0 0;
 }
 
+.icon-wrap {
+	display: inline-block;
+}
+
 .about-list {
 	list-style-type: none;
 	background-color: #fff;
@@ -86,10 +90,54 @@ nav li:last-child {
 	border-bottom: none;
 }
 
+
 /* blog section */
 .blog {
 	padding: 40px 0 0 0;
 }
 
+.post-container {
+	height: 250px;
+	border: 1px solid #D7D7D7;
+	background-color: #fff;
+	border-top: none;
+	border-radius: 0 0 8px 8px;
+}
 
+.blog-input {
+	padding: 20px;
+	height: 100%;
+}
 
+.post-container textarea, .post-container input {
+	display: inline-block;
+	margin-bottom: 5px;
+	width: 100%;
+	border: 1px solid #D7D7D7;
+}
+
+textarea {
+	height: 80%;
+}
+
+.article {
+	margin-top: 40px;
+}
+
+div.article-div {
+	height: 100%;
+}
+
+.article-content {
+	padding: 10px 20px;
+}
+
+.article-content li {
+	list-style: none;
+	padding: 15px 0;
+	border-bottom: 1px solid #D7D7D7;
+}
+
+input.comment {
+	margin: 0;
+}
