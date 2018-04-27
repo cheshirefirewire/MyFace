@@ -1,5 +1,6 @@
+
 {
   "user": [
-    {"name": "Jose", "location": "New York", "birthday": "12/24/1992", "occupation": "programmer", "relationshipStatus":"single", "interestedIn":"meditation"}
+    {"id": 1, "name": "Jose", "location": "New York", "birthday": "12/24/1992", "occupation": "programmer", "relationshipStatus":"single", "interestedIn":"meditation", "profileImage":"profile.png", "backgroundImage":"cover.jpg"}
   ]
 }
