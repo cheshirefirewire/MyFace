@@ -1,57 +1,48 @@
 "use strict";
 
+////////////////////////////////////////////////////
+
 var aboutMeData = $.ajax({
-  method: "GET",
-  url: "http://localhost:3000/user/1",
-  dataType: "jsonp",
-  success: function (data) {
-        // Send data back to the locale variable
-        aboutMeData = data;
-  }
-}).then(function(data){
-  console.log('data',data);
-  myTemplateFunction(data);
-  profilePic(data);
-  backgroundImage(data)
-  addEventListenersToSideNav();
+	method: "GET",
+  	url: "http://localhost:3000/user/1",
+  	dataType: "jsonp"
 });
 
+aboutMeData.done(function(data) {
+	// Send data back to the locale variable
+    aboutMeData = data;
+    init(data);
+});
 
-//no IIFE for myTemplateFunction because it's being called within AJAX .then annonymous function
-function myTemplateFunction(templateData) {
-	var source = document.getElementById("side-nav-template").innerHTML;
-	var sideNavTemplate = Handlebars.compile(source);
-	var templateHTML = sideNavTemplate(templateData);
-	var sideNavPlaceHolder = document.getElementById("side-nav-placeHolder-div");
-	sideNavPlaceHolder.innerHTML = templateHTML;
+aboutMeData.fail(function(xhr, status, errorThrown) {
+    alert( "Sorry, there was a problem!" );
+    console.log( "Error: " + errorThrown );
+    console.log( "Status: " + status );
+    console.dir( xhr );
+ });
+
+////////////////////////////////////////////////////
+
+function init(initialData) {
+	console.log('initialData',initialData);
+	populateSideNavContent(initialData);
+	populateProfilePicContent(initialData);
+	populateBackgroundImageContent(initialData)
+	addEventListenersToSideNav();
 }
 
+////////////////////////////////////////////////////
 
-//Function to populate html profile pic
-function profilePic(profilePicData) {
-	var source = document.getElementById("profile-pic-template").innerHTML;
-	var profilePicTemplate = Handlebars.compile(source);
-
-	//var context = {profilePic: "images/profile.png"};
-	var profilePic = profilePicTemplate(profilePicData);
-
-	var profilePicPlaceHolder = document.getElementById("profile-pic-placeHolder-div");
-	profilePicPlaceHolder.innerHTML = profilePic;
-};
-
-//Function to populate html background image
-function backgroundImage(backgroundImageData) {
-	var source = document.getElementById("background-pic-template").innerHTML;
-	var backgroundPicTemplate = Handlebars.compile(source);
-
-	//var context = {backgroundPic: "images/nature.jpg"};
-	var backgroundPic = backgroundPicTemplate(backgroundImageData);
-
-	var backgroundPicPlaceHolder = document.getElementById("background-pic-placeHolder-div");
-	backgroundPicPlaceHolder.innerHTML = backgroundPic;
+function creatingHandlebarsTemplate(targetHandlebarsScriptElement, data, handlebarsPlaceHolderDiv) {
+	var handlebarsScriptSource = document.getElementById(targetHandlebarsScriptElement).innerHTML;
+	var handlebarsTemplateToRender = Handlebars.compile(handlebarsScriptSource);
+	var finalContentToRender = handlebarsTemplateToRender(data);
+	var finalContentToRenderPlaceHolder = document.getElementById(handlebarsPlaceHolderDiv);
+	finalContentToRenderPlaceHolder.innerHTML = finalContentToRender;
 }
 
-//Function to toggle side nav vertically up and down
+////////////////////////////////////////////////////
+
 function toggleVerticalNavUpDown(elem) {
 	var target = document.getElementById(elem);
 	var maxHeight = "auto";
@@ -64,7 +55,26 @@ function toggleVerticalNavUpDown(elem) {
 	}
 }
 
-//Function to allow user to enter new values into input fields and send new data to DB
+////////////////////////////////////////////////////
+
+function populateSideNavContent(sideNavData) {
+	creatingHandlebarsTemplate("side-nav-template", sideNavData, "side-nav-placeHolder-div");
+}
+
+////////////////////////////////////////////////////
+
+function populateProfilePicContent(profilePicData) {
+	creatingHandlebarsTemplate("profile-pic-template", profilePicData, "profile-pic-placeHolder-div");
+}
+
+////////////////////////////////////////////////////
+
+function populateBackgroundImageContent(backgroundImageData) {
+	creatingHandlebarsTemplate("background-pic-template", backgroundImageData, "background-pic-placeHolder-div");
+}
+
+////////////////////////////////////////////////////
+
 function addEventListenersToSideNav() {
 	var aboutMeList = document.querySelector('#verticalSide-nav-ul');
 	aboutMeList.addEventListener('click', function(event) {
@@ -72,43 +82,24 @@ function addEventListenersToSideNav() {
 		if(event.target.className === 'fieldEditor') {
 			var fieldToEdit = event.target.previousElementSibling;
 			fieldToEdit.removeAttribute('readonly');
-			var fieldCurrentText = fieldToEdit.value;
-			//console.log("focusin successful");
-
-			fieldToEdit.addEventListener('focusout', function(event) {
-				fieldToEdit.readonly = true;
-				//console.log("focusout successful");
-				if(fieldCurrentText != fieldToEdit.value) {
-					updateUserObject($(fieldToEdit).attr('model'), fieldToEdit.value, aboutMeData);
-					//console.log("new value entered!");
-				}
-			});
+			var currentTextInField = fieldToEdit.value;
+			editSideNavInputField(fieldToEdit, currentTextInField);
 		}
 	});
 }
 
+////////////////////////////////////////////////////
 
-/*
-var addEventListeners = function(){
-  var aboutMeList = document.querySelector('ul');
-  aboutMeList.addEventListener('click', function($event){
-    $event.stopPropagation();
-    if($($event.target).hasClass('fieldEditor')){
-    	console.log("testing!!");
-      var fieldToEdit = $($event.target).parent('li').find('input')[0];
-      var fieldCurrentText = fieldToEdit.value;
-      $(fieldToEdit).removeAttr('readonly');
-
-      fieldToEdit.addEventListener('focusout', function($event){
-        $(fieldToEdit).prop('readonly', true);
-        if(fieldCurrentText !== fieldToEdit.value){
-          updateUserObject($(fieldToEdit).attr('model'), fieldToEdit.value, aboutMeData);
-        }
-      });
-    }
-  });
+function editSideNavInputField(fieldToEdit, currentTextInField) {
+	fieldToEdit.addEventListener('focusout', function(event) {
+		fieldToEdit.readonly = true;
+		if(currentTextInField != fieldToEdit.value) {
+			updateUserObject($(fieldToEdit).attr('model'), fieldToEdit.value, aboutMeData);
+		}
+	});
 }
-*/
+
+////////////////////////////////////////////////////
 
 var updateUserObject = function(model, value, aboutMeData){
   var dataForPassing = {model:value};
