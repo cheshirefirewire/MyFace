@@ -20,12 +20,10 @@ body {
 }
 
 .cover {
-  min-height:300px;
-  width:100%;
+  min-height:400px;
   background-image: url("../images/cover.jpg");
-  background-size: cover;
+  background-size:100% 100%;
   position: relative;
-
 }
 
 .menu-img {
@@ -43,7 +41,7 @@ body {
 .header nav {
   border: 1px solid gray;
   background-color: #FFFFFF;
-  padding:0 0 0 25%;
+  padding:0 0 0 230px;
   position:relative;
 }
 
@@ -56,4 +54,9 @@ ul.nav li{
 
 ul.nav li:first-child {
   border-left:1px solid gray;
+}
+
+.placeholder {
+
+  padding:3rem;
 }

@@ -13,6 +13,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="./index.js" defer></script>
 
     <link rel="stylesheet" href='styles/styles.css' />
 
@@ -20,7 +22,7 @@
 
   <body>
 
-    <header class="row">
+    <header class="row fixed-top">
       <div class='col-xs-12 top-header'>
           <a href="#">
             <img src='./images/myface_logo.png' class='offset-xs-0 offset-md-2'/>
@@ -47,19 +49,27 @@
     </section>
 
 
+    <div id='placeholder' class='placeholder'>
+    </div>
 
 
 
 
-
-
-    <!-- <div id='main' class='main'>
-      <div class='cover-wrapper'>
-        <img src='./images/cover.jpg' />
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="entry">
+        <h1>{{title}}</h1>
+        <div class="body">
+          <ul>
+            <li>name: {{name}}</li>
+            <li>location: {{location}}</li>
+            <li>birthday: {{birthday}}</li>
+            <li>occupation: {{occupation}}</li>
+            <li>relationship status: {{relationshipStatus}}</li>
+            <li>interested in: {{interestedIn}}</li>
+          </ul>
+        </div>
       </div>
-
-
-    </div>  end main div -->
+    </script>
 
 
 
