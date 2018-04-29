@@ -29,6 +29,8 @@
 
     <div id="placeHolder"></div>
 
+    <div id="blog-placeHolder"></div>
+
     <script id="entry-template" type="text/x-handlebars-template">
       <div class="entry">
         <div class="body">
@@ -44,6 +46,21 @@
       </div>
     </script>
 
+    <script id="blog-template" type="text/x-handlebars-template">
+
+      <form action="" id="form1">
+        Title: <input type="text" name="title" id="title"><br>
+        Content: <input type="text" name="content" id="content"><br>
+        <button form="form1" value="Submit">Submit</button>
+      </form>
+
+      <div class="blog-container">
+        {{#each this}}
+          <h1>Title: {{title}}</h1>
+          <p>Content: {{content}}</p>
+        {{/each}}
+      </div>
+    </script>
 
 
 

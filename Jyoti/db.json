@@ -1,0 +1,33 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Joseddd",
+      "location": "New York",
+      "birthday": "12/24/1992",
+      "occupation": "programmer",
+      "relationshipStatus": "single",
+      "interestedIn": "meditation",
+      "profileImage": "profile.png",
+      "backgroundImage": "cover.jpg",
+      "model": "JoseD"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "this is my blog title",
+      "content": "here is my content"
+    },
+    {
+      "title": "another blog",
+      "content": "words words words",
+      "id": 2
+    },
+    {
+      "title": "ddd",
+      "content": "dddd",
+      "id": 3
+    }
+  ]
+}
