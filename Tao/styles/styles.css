@@ -1,37 +1,34 @@
 
-body, body * {
-  padding:0;
-  margin:0;
-}
-
 body {
-  background: url('./images/bg.png');
+  background-color:#D8D8D8;
 }
 
 .top-header {
     background-color: #3663A3;
-    margin:0;
+    padding: 5px;
     width:100%;
+    border-bottom:1px solid #000000;
+}
+
+section {
+  margin-bottom: 2rem;
 }
 
 .header {
   padding:0;
-  position:relative;
 }
 
 .cover {
   min-height:400px;
-  background-image: url("../images/cover.jpg");
   background-size:100% 100%;
-  position: relative;
 }
 
-.menu-img {
+.profile-image {
   position:absolute;
   bottom:10px;
   left:10px;
   z-index:10;
-  border:1px solid gray;
+  border:1px solid #BDBDBD;
 }
 
 .menu-img img {
@@ -39,24 +36,65 @@ body {
 }
 
 .header nav {
-  border: 1px solid gray;
+  border: 1px solid #BDBDBD;
   background-color: #FFFFFF;
   padding:0 0 0 230px;
-  position:relative;
 }
 
 ul.nav li{
   margin:0;
   padding:0 2rem;
-  color:gray;
-  border-right:1px solid gray;
+  color: #3663A3;
+  border-right:1px solid #BDBDBD;
 }
 
 ul.nav li:first-child {
-  border-left:1px solid gray;
+  border-left:1px solid #BDBDBD;
 }
 
-.placeholder {
+/* about box styling */
 
-  padding:3rem;
+.about-container {
+  border:1px solid #BDBDBD;
+  background-color:#FFFFFF;
+  padding: 0;
+  margin:0;
+  color: #424242;
+  border-radius:5px;
+}
+
+.about-container .accordion-toggle:after {
+  font-family: 'FontAwesome';/* essential to enable caret symbol*/
+  content: "\f0d7";/* adjust as needed, taken from font-awesome.css */
+  color: #424242;
+}
+.about-container .accordion-toggle.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "\f0da";  /* adjust as needed, taken from font-awesome.css */
+}
+
+.title-about {
+  padding:10px 0 10px 20px;
+  border-bottom:1px solid #BDBDBD;
+}
+
+.title-about a {
+  margin-right:0.5rem;
+}
+
+ul.list-about {
+  list-style: none;
+  padding: 0;
+  margin:0;
+  font-size:0.8rem;
+}
+
+ul.list-about li {
+  padding:10px 0;
+  margin: 0 20px;
+  border-bottom:1px solid #BDBDBD;
+}
+
+ul.list-about li:last-child {
+  border-bottom:none;
 }

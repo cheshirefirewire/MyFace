@@ -8,7 +8,7 @@
 
     <title>Tao's MyFace</title>
 
-    <!--Bootstrap files including jquery and popper -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -32,34 +32,46 @@
 
     <section>
       <div class='row'>
-        <div class='col-xs-12 col-md-8 offset-md-2 header'>
-          <div class='cover'></div>
-          <div class='menu-img'>
-             <img src='./images/profile-sq.png' />
-           </div>
+        <div id="header" class='col-xs-12 col-md-8 offset-md-2 header'>
+
+          <div id='profileImage' class='profile-image'></div>
           <nav class='navbar'>
             <ul class='nav'>
               <li>blog</li>
               <li>galleries</li>
             </ul>
           </nav>
+        </div>
+      </div>
+    </section>
 
+    <section>
+      <div class='row'>
+        <div class='col-xs-12 col-md-8 offset-md-2 header'>
+          <div id='aboutBox' class='col-xs-12 col-md-4 about-container'></div>
         </div>
       </div>
     </section>
 
 
-    <div id='placeholder' class='placeholder'>
-    </div>
 
 
+    <script id="banner-template" type="text/x-handlebars-template">
+      <div id='bannerImage' class='cover' style="background-image:{{myBanner}}"></div>
+    </script>
 
+    <script id="profile-template" type="text/x-handlebars-template">
+      <img src={{src}} />
+    </script>
 
-    <script id="entry-template" type="text/x-handlebars-template">
-      <div class="entry">
-        <h1>{{title}}</h1>
-        <div class="body">
-          <ul>
+    <script id="about-template" type="text/x-handlebars-template">
+
+        <div class='title-about'>
+          <a class="accordion-toggle" data-toggle="collapse" href="#aboutCollapse"></a>
+          {{title}}
+        </div>
+        <div id='aboutCollapse' class='collapse show'>
+          <ul class='list-about'>
             <li>name: {{name}}</li>
             <li>location: {{location}}</li>
             <li>birthday: {{birthday}}</li>
@@ -68,7 +80,7 @@
             <li>interested in: {{interestedIn}}</li>
           </ul>
         </div>
-      </div>
+
     </script>
 
 
