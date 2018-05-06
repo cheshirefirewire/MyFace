@@ -1,0 +1,1 @@
+routingMethod.renderPage('blog');
