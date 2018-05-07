@@ -1,0 +1,43 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Joseddd",
+      "location": "New York",
+      "birthday": "12/24/1992",
+      "occupation": "programmer",
+      "relationshipStatus": "single",
+      "interestedIn": "meditation",
+      "profileImage": "profile.png",
+      "backgroundImage": "cover.jpg",
+      "model": "JoseD"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "this is my blog title",
+      "content": "here is my content"
+    },
+    {
+      "title": "dd",
+      "content": "dd",
+      "id": 2
+    },
+    {
+      "title": "dddd",
+      "content": "dddd",
+      "id": 3
+    },
+    {
+      "title": "zzzz",
+      "content": "zzzz",
+      "id": 4
+    },
+    {
+      "title": "jkjk",
+      "content": "jkjk",
+      "id": 5
+    }
+  ]
+}

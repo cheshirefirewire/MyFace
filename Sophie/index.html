@@ -1,24 +1,77 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="main.css">
 
+
 <head></head>
+
 <body>
-  <header class="navbar-left">
-    <img src="img/sootsprite.png">
-  </header>
-  <div class="cover">
-    <img src="img/arrietty.jpg">
-    <div class="row">
-      <div class="profile-picture">
-        <div class="for-border">
-          <img src="img/profile.png">
+    <header class="navbar-left">
+        <img src="img/sootsprite.png">
+    </header>
+    <div class="cover">
+        <div id="bg-placeholder"></div>
+        <div class="secondrow">
+            <div class="profile-picture" id="profile-pic-placeholder">
+
+            </div>
+            <div class="wholerow">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">blog</a></li>
+                    <li><a href="#">gallery</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+      <div class="left-box format-box">
+        <div class="header" id="about">
+          <div class="padding-wrapper">
+            <svg height="10" width="10" id="open-triangle" style="display: none;">
+              <polygon points="0,0 5,10 10,0" style="fill:#063A1F;" />
+            </svg>
+            <svg height="10" width="10" id="closed-triangle">
+              <polygon points="0,0 10,5 0,10" style="fill:#063A1F;" />
+            </svg>
+            about
+          </div>
+        </div>
+        <div id="about-placeholder" style="display: none;"></div>
+      </div>
+      <div class="right-box format-box">
+        <div class="header">
+          <div class="padding-wrapper">
+            write someting about yourself
+          </div>
+        </div>
+        <div class="padding-wrapper">
+          And Dinsdale says 'I hear you've been a naughty boy, Clement', and he splits me nostrils open, saws me leg off and pulls me liver out. And I tell him 'My name's not Clement', and then he loses his temper and nails my head to the floor. It's a Mr. Death, dear. He's here about the reaping.
+          <br>
+          Listen, strange women lyin' in ponds distributin' swords is no basis for a system of government. Supreme executive power derives from a mandate from the masses, not from some farcical aquatic ceremony.
+          <br>
+          And finally, a wafer thin mint. Pero las llamas son peligrosas. Si usted ve una llama donde hay gente﻿ nadando, usted gritar: ¡Cuidado! ¡Llamas!
         </div>
       </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Blog</a></li>
-        <li><a href="#">Gallery</a></li>
-      </ul>
     </div>
-  </div>
 
+    <script id="about-template" type="text/x-handlebars-template">
+        <ul>
+            <li>name: {{name}}</li>
+            <li>location: {{location}}</li>
+            <li>birthday: {{birthday}}</li>
+            <li>occupation: {{occupation}}</li>
+            <li>relationship: {{relationship}}</li>
+            <li>interested in: {{interest}}</li>
+        </ul>
+    </script>
+    <script id=profile-pic-template type="text/x-handlebars-template">
+        <div class="for-border">
+            <img src={{picture}}>
+        </div>
+    </script>
+    <script id=bg-template type="text/x-handlebars-template">
+        <div class="firstrow" style='background-image: url({{background}})'></div>
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="handlebars-v4.0.11.js"></script>
+    <script src="myface.js"></script>
 </body>
