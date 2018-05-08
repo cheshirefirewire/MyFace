@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+  
+
+    <script src="./handlebars-v4.0.11.js"></script>
+    <script src="./index.js" defer></script>
+
+  </head>
+  <body>
+    <header class="col-md-12 header-bar">
+        <div class="col-md-10 offset-md-2">
+          <img alt="MyFace logo" src="assets/images/myface_logo.png"/>
+        </div>
+    </header>
+    <main>
+      <section class="col-md-8 offset-md-2 top-section">
+    
+
+        <div id="cover">
+        </div>
+
+        <figure id="profile-outer" class="profile">
+          
+        </figure>
+
+        <nav class="col-md-12">
+          <ul>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">galleries</a></li>
+          </ul>
+        </nav>
+      </section>
+
+   
+
+      <section class="col-md-8 offset-md-2">
+        <p>Cece's MyFace Application</p>
+        <div id="place-holder"></div>
+        <div id="place-holder2"></div>
+      </section>
+
+      
+      <script id="entry-template" type="text/x-handlebars-template">
+        <div class="entry">
+          <h1>{{title}}</h1>
+          <div class="body">
+            {{body}}
+          </div>
+        </div>
+      </script>
+
+      <script id="about-template" type="text/x-handlebars-template">
+        <div class="entry">
+          <aside>
+            <header><i></i>about</header>
+            <ul>
+              <li>name: {{name}}</li>
+              <li>location: {{location}}</li>
+              <li>birthday: {{birthday}}</li>
+              <li>occupation: {{occupation}}</li>
+              <li>relationship status: {{relationshipStatus}}</li>
+              <li>interested in: {{interestedIn}}</li>
+            </ul>
+          </aside>
+        </div>
+      </script> 
+
+      <script id="profile-img-template" type="text/x-handlebars-template"> 
+        <img alt="profile picture" src="{{profileImgUrl}}" />
+      </script>
+
+      <script id="cover-img-template" type="text/x-handlebars-template"> 
+        <div class="cover" style="background-image: url('{{coverImgUrl}}')"></div>
+      </script>
+
+    </main>
+  </body>
+</html>
