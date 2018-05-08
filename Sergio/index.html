@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Face Application</title>
-    <!--Bootstrap files -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!--jQuery Google CDN (Content Delivery Network) call  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--custom css file -->
     <link rel="stylesheet" type="text/css" href="css/custom.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
@@ -47,10 +49,10 @@
           <div class="col-md-12">
 
             <!-- background image Handlebars place holder -->
-            <div class="container" id="background-pic-placeHolder-div"></div>
+            <div id="background-pic-placeHolder-div"></div>
             <script id="background-pic-template" type="text/x-handlebars-template">
               <div class="bg-img-class">
-                <img class="nature_img" src={{backgroundPic}}>   
+                <img class="nature_img" src=images/{{backgroundImage}}>   
               </div>
             </script>
             <!-- end background image Handlebars script/place holder -->
@@ -83,7 +85,7 @@
         <div class="container" id="profile-pic-placeHolder-div"></div>
         <script id="profile-pic-template" type="text/x-handlebars-template">
           <div>
-            <img class="profile_img" src={{profilePic}}>   
+            <img class="profile_img" src=images/{{profileImage}}>   
           </div>
         </script>
         <!-- end profile image Handlebars script/place holder -->
@@ -105,17 +107,17 @@
             <!-- end of 'about' div -->
 
             <!-- start of Handlebars template to render Vertical Side Nav script -->
-            <div class="container" id="side-nav-placeHolder-div"></div>
+            <div id="side-nav-placeHolder-div"></div>
 
             <script id="side-nav-template" type="text/x-handlebars-template">
               <div>
                 <ul id="verticalSide-nav-ul">
-                  <li><b>name:</b> {{name}}</li>
-                  <li><b>location:</b> {{location}}</li>
-                  <li><b>birthday:</b> {{birthday}}</li>
-                  <li><b>occupation:</b> {{occupation}}</li>
-                  <li><b>relationship status:</b> {{relationshipStatus}}</li>
-                  <li><b>interested:</b> {{interested}}</li>
+                  <li><b>name:</b> <input class="verNav-input" value={{name}} readonly></input> <span class="fieldEditor">&#9998;</span></li>
+                  <li><b>location:</b> <input class="verNav-input" value={{location}} readonly></input> <span class="fieldEditor">&#9998;</span></li>
+                  <li><b>birthday:</b> <input class="verNav-input" value={{birthday}} readonly></input> <span class="fieldEditor">&#9998;</span></li>
+                  <li><b>occupation:</b> <input class="verNav-input" value={{occupation}} readonly></input> <span class="fieldEditor">&#9998;</span></li>
+                  <li><b>relationship status:</b> <input class="verNav-input" value={{relationshipStatus}} readonly></input> <span class="fieldEditor">&#9998;</span></li>
+                  <li><b>interested:</b> <input class="verNav-input" value={{interestedIn}} readonly></input> <span class="fieldEditor">&#9998;</span></li>
                 </ul>
               </div>
             </script>
