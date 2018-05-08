@@ -9,17 +9,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./handlebars-v4.0.11.js"></script>
+    <script src="./routing.js" defer></script>
+    <script src="./blog.js" defer></script>
+    <script src="./aboutMe.js" defer></script>
     <script src="./index.js" defer></script>
   </head>
 
   <body>
     <p>My Face Application</p>
 
-    <div id="placeHolder"></div>
+    <div id="app-placeholder"></div>
 
-    <div id="blog-placeHolder"></div>
+    <script id="blog-page" type="text/x-handlebars-template">
+      <div id="about-me-placeholder"></div>
+      <div id="blog-placeholder"></div>
+    </script>
 
-    <script id="entry-template" type="text/x-handlebars-template">
+    <script id="gallery-page" type="text/x-handlebars-template">
+      <div id="about-me-placeholder"></div>
+    </script>
+
+    <script id="about-me-template" type="text/x-handlebars-template">
       <div class="entry">
         <div class="body">
           <ul>
@@ -35,7 +45,6 @@
     </script>
 
     <script id="blog-template" type="text/x-handlebars-template">
-
       <form action="" id="form1">
         Title: <input type="text" name="title" id="title"><br>
         Content: <input type="text" name="content" id="content"><br>
