@@ -1,0 +1,48 @@
+body {
+    background-color: beige;
+    font-family: Geneva sans-serif;
+    color: dimgrey;
+    margin: 0px;
+}
+
+.content {
+    padding-left: 24px;
+}
+
+.course-image {
+    text-align: center;
+    padding-bottom: 12px;
+    width: 200px;
+}
+
+.navigation-bar img {
+    border: solid lightgray 2px;
+}
+
+.course-title {
+    text-align: center;
+    color: black;
+    width: 200px;
+    padding-bottom: 12px;
+    font-weight: bold;
+}
+
+.author-about {
+    width: 600px;
+}
+
+.footer {
+    background-color: #de1515;
+    color: white;
+    padding: 12px 0;
+    margin: 0;
+    clear: right;
+}
+
+.footer-links {
+    padding: 0 12px;
+}
+
+.navigation-bar {
+    float: right;
+}

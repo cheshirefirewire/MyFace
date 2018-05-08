@@ -1,0 +1,18 @@
+body {
+    font-family: Geneva, sans-serif;
+}
+
+.course {
+    border: solid thin #eeeeee;
+    padding: 4px 12px;
+    background-color: azure;
+    width: 800px;
+}
+
+
+.reviews {
+    padding: 4px 12px;
+    background-color: antiquewhite;
+    width: 760px;
+    font-style: italic;
+}

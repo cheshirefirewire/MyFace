@@ -1,0 +1,66 @@
+body {
+    background-color: beige;
+    font-family: Geneva sans-serif;
+    color: dimgrey;
+    margin: 0px;
+}
+
+.logo {
+    padding: 12px 24px;
+}
+
+.content-header {
+    background-color: #de1515;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.content {
+    padding-top: 80px;
+    padding-left: 24px;
+    width: 800px;
+    margin: auto;
+}
+
+.navigation-bar img {
+    border: solid lightgray 2px;
+}
+
+.course-info {
+    height: 150px;
+}
+
+.course-image {
+    padding-bottom: 12px;
+    display: none;
+    float:left;
+    padding-right: 24px;
+}
+
+.course-title {
+    color: black;
+    width: 200px;
+    padding-bottom: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.footer {
+    background-color: #de1515;
+    color: white;
+    padding: 12px 0;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-links {
+    padding: 0 12px;
+}
+
+.navigation-bar {
+    padding-top: 12px;
+}
