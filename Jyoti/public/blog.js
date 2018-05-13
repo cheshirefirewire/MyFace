@@ -13,18 +13,12 @@ var updateBlogData = function(){
   });
 }
 
-var blogsTemplateCompile = function(templateData){
-  var source   = document.getElementById("blog-template").innerHTML;
-  var template = Handlebars.compile(source);
-
-  var html = template(templateData);
-
-  var placeholder = document.getElementById("blog-placeholder");
-  placeholder.innerHTML = html;
+var blogsTemplateCompile = function(data){
+  utility.templateCompiler(data, "blog-template", "blog-placeholder");
 };
 
 var bindBlogEventHandlers = function(){
-  $("#form1 button").click(function(e) {
+  $("#blogForm button").click(function(e) {
        // validate and process form here
       e.preventDefault();
       var title = $("input#title").val();
@@ -32,9 +26,37 @@ var bindBlogEventHandlers = function(){
       var dataForPassing = {};
       dataForPassing['title'] = title;
       dataForPassing['content'] = content;
+      dataForPassing['comment'] = [];
       console.log('blog dataForPassing', dataForPassing);
       $.ajax({
         method: "POST",
+        url: "http://localhost:3000/blogs/",
+        dataType: "json",
+        data: JSON.stringify(dataForPassing),
+        contentType: 'application/json',
+        success: function(data){
+          console.log('dataForPassing success', dataForPassing);
+          console.log('data',data);
+          updateBlogData();
+        },
+        error: function(error){
+          console.log('dataForPassing error', dataForPassing);
+          console.log('error',error);
+        }
+      });
+  });
+}
+
+var bindCommentEventHandlers = function(){
+  $(".commentForm button").click(function(e) {
+       // validate and process form here
+      e.preventDefault();
+      var comment = $("input#commentBody").val();
+      var dataForPassing = {};
+      dataForPassing['comment'] = comment;
+      console.log('comment dataForPassing', dataForPassing);
+      $.ajax({
+        method: "PUT",
         url: "http://localhost:3000/blogs/",
         dataType: "json",
         data: JSON.stringify(dataForPassing),
@@ -56,6 +78,7 @@ var blogInit = function(){
   getBlogData().then(function(data){
     blogsTemplateCompile(data);
     bindBlogEventHandlers();
+    bindCommentEventHandlers();
   });
 };
 
