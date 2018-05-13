@@ -108,17 +108,21 @@ body{
 	border-bottom: 1px solid #d2d2d2;
 }
 
-.box-body.open{
+.box-body{
+	padding: 10px 15px;
+}
+
+#about-box .box-body.open{
 	display: block;
 }
 
-.box-body{
+#about-box .box-body{
 	display: none;
 }
 
 .user-data-holder{
 	list-style-type: none;
-	padding: 0 15px;
+	padding: 0;
 	margin-bottom: 0;
 }
 
@@ -132,8 +136,13 @@ body{
 	font-size: 1em;
 }
 
+.box .user-data-holder li:first-child{
+	padding-top: 0;
+}
+
 .box .user-data-holder li:last-child{
 	border-bottom: none;
+	padding-bottom: 0;
 }
 
 .box .user-data-holder li span{
@@ -147,4 +156,9 @@ body{
 .box .user-data-holder li input[readonly]{
 	border: 2px solid transparent;
 	color: #6a7480;
+}
+
+.box#new-post .box-body textarea, .box#new-post .box-body input{
+	width: 100%;
+	border:1px solid #d2d2d2
 }

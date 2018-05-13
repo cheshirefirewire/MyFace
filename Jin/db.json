@@ -1,0 +1,25 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Joseph",
+      "location": "New York",
+      "birthday": "12/24/1992",
+      "occupation": "programmer",
+      "relationshipStatus": "single",
+      "interestedIn": "meditation",
+      "profileImage": "profile.png",
+      "backgroundImage": "cover.jpg"
+    }
+  ],
+  "blogs": [
+    {
+      "title": "This is my 2nd title",
+      "content": "Here is my content"
+    },
+    {
+      "title": "This is my blog title",
+      "content": "Here is my content"
+    }
+  ]
+}
