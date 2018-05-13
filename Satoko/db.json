@@ -1,0 +1,28 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Jose",
+      "location": "Ne",
+      "birthday": "12/24/1992",
+      "occupation": "programmer",
+      "relationshipStatus": "ml",
+      "interestedIn": "meditation",
+      "profileImage": "profile.png",
+      "backgroundImage": "cover.jpg",
+      "label": "Josell"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "this is my blog title",
+      "content": "here's my content"
+    },
+    {
+      "title": "",
+      "content": "asdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtdsasdfafafadfasfdadfasdfa fadfasdfasdfasdfa dsf aewfargehshtds",
+      "id": 2
+    }
+  ]
+}
