@@ -1,38 +1,82 @@
 
-(function aboutTemplate(){
-  var source   = document.getElementById("about-template").innerHTML;
+
+var myData = function(){
+  var myData = $.ajax({
+    method:"GET",
+    dataType:"json",
+    url:"http://localhost:3000/users/",
+    success: function(data){
+      init(data);
+    },
+    error: function(error){
+      console.log("error is ", error);
+    }
+  });
+}
+
+var init = function(data){
+  entryTemplate(data[0]);
+  addEventListeners();
+}
+
+var entryTemplate = function(data){
+  var source   = document.getElementById("entry-template").innerHTML;
   var template = Handlebars.compile(source);
-  var context = {
-    title: "about",
-    name: "Tao",
-    location: 'Earth',
-    birthday: 'May 5',
-    occupation: 'web developer',
-    relationshipStatus: 'divine',
-    interestedIn: 'enlightenment'};
-  var html    = template(context);
-  var placeholder = document.getElementById("aboutBox");
+  var html    = template(data);
+  var placeholder = document.getElementById("main");
   placeholder.innerHTML = html;
-})();
+}
+
+var addEventListeners = function(){
+  var editBuffer = {};
+  var aboutList = document.querySelector('ul.list-about');
 
 
-(function profileImage(){
-  var source   = document.getElementById("profile-template").innerHTML;
-  var template = Handlebars.compile(source);
-  var context = {
-    src: "./images/profile-sq.png"
-  }
-  var html    = template(context);
-  var placeholder = document.getElementById("profileImage");
-  placeholder.innerHTML = html;
-})();
+  // edit functionality for about section
+  aboutList.addEventListener('click', function(e){
+    if(e.target.tagName === 'SPAN') {
+      var userid = $(e.target).parents('ul').find('li input[name="userid"]').val();
+      console.log(userid);
+      var fieldToEdit = $(e.target).parent('li').find('input')[0];
+      if (fieldToEdit.hasAttribute('readonly')){
+        editBuffer[fieldToEdit.name]=fieldToEdit.value;
+        fieldToEdit.removeAttribute('readonly');
+      } else {
+        fieldToEdit.setAttribute('readonly', true);
+        var key = fieldToEdit.name;
+        var newValue = fieldToEdit.value;
+        var oldValue = editBuffer[key];
+        if (newValue.trim() !== oldValue.trim()){
+          var user = {};
+          user[key]=newValue.trim();
+          sendData(user, userid);
+        }
+      }
+    }
+  });
 
 
-(function bannerImage(){
-  var source   = document.getElementById("banner-template").innerHTML;
-  var template = Handlebars.compile(source);
-  var context = { myBanner: "url(./images/cover.jpg)" };
-  var html    = template(context);
-  var header = document.getElementById("header");
-  header.insertAdjacentHTML('afterbegin', html);
-})();
+}
+
+var sendData = function(data, userid){
+  var address = "http://localhost:3000/users/"+userid;
+  var xhr = $.ajax({
+    method:'PATCH',
+    data: JSON.stringify(data),
+    dataType: 'json',
+    headers: { 'content-type' : 'application/json'},
+    url:address,
+    success: function(data){
+      console.log('ajax call returns ', data);
+    },
+    error: function(error){
+      console.log("error is ", error);
+    }
+  });
+
+
+}
+
+$(document).ready(function(){
+   myData();
+});

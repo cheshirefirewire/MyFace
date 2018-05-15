@@ -3,6 +3,10 @@ body {
   background-color:#D8D8D8;
 }
 
+body #main .row {
+  margin:0;
+}
+
 .top-header {
     background-color: #3663A3;
     padding: 5px;
@@ -95,6 +99,20 @@ ul.list-about li {
   border-bottom:1px solid #BDBDBD;
 }
 
+ul.list-about li input[readonly] {
+  border:none;
+  outline:none;
+}
+
+ul.list-about li:first-child {
+  display:none;
+}
+
 ul.list-about li:last-child {
   border-bottom:none;
+}
+
+ul.list-about span {
+  cursor:pointer;
+  float:right;
 }

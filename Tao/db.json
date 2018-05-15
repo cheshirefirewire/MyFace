@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Tao",
+      "location": "Earth",
+      "birthday": "May 5",
+      "occupation": "web developer",
+      "relationshipStatus": "divine",
+      "interestedIn": "enlightenment",
+      "backgroundImg": "./images/cover.jpg",
+      "profileImg": "./images/profile-sq.png"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "safeuser": [
+    {
+      "id": 1,
+      "name": "Tao",
+      "location": "Earth",
+      "birthday": "May 5",
+      "occupation": "web developer",
+      "relationshipStatus": "divine",
+      "interestedIn": "enlightenment",
+      "backgroundImg": "./images/cover.jpg",
+      "profileImg": "./images/profile-sq.png"
+    }
+  ]
+}

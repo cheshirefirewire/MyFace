@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -22,7 +23,7 @@
 
   <body>
 
-    <header class="row fixed-top">
+    <header class="fixed-top">
       <div class='col-xs-12 top-header'>
           <a href="#">
             <img src='./images/myface_logo.png' class='offset-xs-0 offset-md-2'/>
@@ -30,56 +31,56 @@
       </div>
     </header>
 
-    <section>
-      <div class='row'>
-        <div id="header" class='col-xs-12 col-md-8 offset-md-2 header'>
+    <div id='main'></div>
 
-          <div id='profileImage' class='profile-image'></div>
-          <nav class='navbar'>
-            <ul class='nav'>
-              <li>blog</li>
-              <li>galleries</li>
-            </ul>
-          </nav>
+    <!-- handlebars template for header, site menu and about user section -->
+    <script id="entry-template" type="text/x-handlebars-template">
+
+      <!-- header section -->
+      <section>
+        <div class='row'>
+          <div id="header" class='col-xs-12 col-md-8 offset-md-2 header'>
+            <div id='bannerImage' class='cover' style='background-image:url({{backgroundImg}})'></div>
+            <div id='profileImage' class='profile-image'>
+              <img src={{profileImg}} />
+            </div>
+            <nav class='navbar'>
+              <ul class='nav'>
+                <li>blog</li>
+                <li>galleries</li>
+              </ul>
+            </nav>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+  
+      <!-- about section -->
+      <section>
+        <div class='row'>
+          <div class='col-xs-12 col-md-8 offset-md-2 header'>
+            <div id='aboutBox' class='col-xs-12 col-md-5 about-container'>
 
-    <section>
-      <div class='row'>
-        <div class='col-xs-12 col-md-8 offset-md-2 header'>
-          <div id='aboutBox' class='col-xs-12 col-md-4 about-container'></div>
+              <div class='title-about'>
+                <a class="accordion-toggle" data-toggle="collapse" href="#aboutCollapse"></a>
+                about
+              </div>
+
+              <div id='aboutCollapse' class='collapse show'>
+                <ul class='list-about'>
+                  <li><input readonly type="hidden" name='userid' value='{{id}}' /></li>
+                  <li>name: <input readonly type='text' name='name' value='{{name}}' /><span>&#9998;</span></li>
+                  <li>location: <input readonly type='text' name='location' value='{{location}}' /><span>&#9998;</span></li>
+                  <li>birthday: <input readonly text='date' name='birthday' value='{{birthday}}' /><span>&#9998;</span></li>
+                  <li>occupation: <input readonly type='text' name='occupation' value='{{occupation}}' /><span>&#9998;</span></li>
+                  <li>relationship status: <input readonly type='text' name='relationshipStatus' value='{{relationshipStatus}}' /><span>&#9998;</span></li>
+                  <li>interested in: <input readonly type='text' name='interestedIn' value='{{interestedIn}}' /><span>&#9998;</span></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-
-
-
-
-    <script id="banner-template" type="text/x-handlebars-template">
-      <div id='bannerImage' class='cover' style="background-image:{{myBanner}}"></div>
-    </script>
-
-    <script id="profile-template" type="text/x-handlebars-template">
-      <img src={{src}} />
-    </script>
-
-    <script id="about-template" type="text/x-handlebars-template">
-
-        <div class='title-about'>
-          <a class="accordion-toggle" data-toggle="collapse" href="#aboutCollapse"></a>
-          {{title}}
-        </div>
-        <div id='aboutCollapse' class='collapse show'>
-          <ul class='list-about'>
-            <li>name: {{name}}</li>
-            <li>location: {{location}}</li>
-            <li>birthday: {{birthday}}</li>
-            <li>occupation: {{occupation}}</li>
-            <li>relationship status: {{relationshipStatus}}</li>
-            <li>interested in: {{interestedIn}}</li>
-          </ul>
-        </div>
+      </section>      
 
     </script>
 
