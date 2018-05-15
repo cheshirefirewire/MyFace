@@ -12,7 +12,6 @@ console.log("working!");
 
 })();
 
-
 (function aboutTemplate (){
 	var source   = document.getElementById("about-template").innerHTML;
 	var template = Handlebars.compile(source);
@@ -25,7 +24,6 @@ console.log("working!");
 	var placeHolder2 = document.getElementById("place-holder2");
 	placeHolder2.innerHTML = templateHtml;
 })();
-
 
 (function profileImgTemplate (){
 	var source   = document.getElementById("profile-img-template").innerHTML;
