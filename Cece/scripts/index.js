@@ -31,7 +31,7 @@ console.log("working!");
 	var source   = document.getElementById("profile-img-template").innerHTML;
 	var template = Handlebars.compile(source);
 
-	var context = { profileImgUrl: "Cece/assets/images/profile.png" };
+	var context = { profileImgUrl: "assets/images/profile.png" };
 
 	var profileImgUrl = template(context);
 
@@ -59,7 +59,7 @@ var blogs = $ajax({
 		// Send data back to the locale variable
 		blogs = data;
 	}
-})then(function(data){
+}).then(function(data){
 	console.log('data: ', data);
 	blogsTemplate(data);
 });
