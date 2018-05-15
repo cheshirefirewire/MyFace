@@ -1,3 +1,5 @@
+console.log("working!");
+
 (function entryTemplate (){
 	var source   = document.getElementById("entry-template").innerHTML;
 	var template = Handlebars.compile(source);
@@ -29,7 +31,7 @@
 	var source   = document.getElementById("profile-img-template").innerHTML;
 	var template = Handlebars.compile(source);
 
-	var context = { profileImgUrl: "assets/images/profile.png" };
+	var context = { profileImgUrl: "Cece/assets/images/profile.png" };
 
 	var profileImgUrl = template(context);
 
