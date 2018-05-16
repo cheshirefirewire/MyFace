@@ -35,29 +35,41 @@
 	cover.innerHTML = coverImgUrl;
 })();
 
-var blogs = $ajax({
+
+$.ajax({
 	method: "GET",
-	url: "http://localhost/3000/blogs",
-	dataType: "json",
-	success: function (data) {
-		// Send data back to the locale variable
-		blogs = data;
-	}
+	url: "http://localhost:3000/users/2",
+	dataType: "jsonp"
 }).then(function(data){
-	console.log('data: ', data);
-	blogsTemplate(data);
-});
+	console.log('data:', data);
+})
 
-var blogsTemplate = function (templateData){
 
-};
 
-$("#form1").submit(function(event){
-	event.preventDefault();
 
-	// Get some values from elements on the page:
-	var form = $(this);
-});
+// var blogs = $ajax({
+// 	method: "GET",
+// 	url: "http://localhost/3000/blogs",
+// 	dataType: "json",
+// 	success: function (data) {
+// 		// Send data back to the locale variable
+// 		blogs = data;
+// 	}
+// }).then(function(data){
+// 	console.log('data: ', data);
+// 	blogsTemplate(data);
+// });
+
+// var blogsTemplate = function (templateData){
+
+// };
+
+// $("#form1").submit(function(event){
+// 	event.preventDefault();
+
+// 	// Get some values from elements on the page:
+// 	var form = $(this);
+// });
 
 
 
