@@ -1,16 +1,3 @@
-(function aboutTemplate (){
-	var source   = document.getElementById("about-template").innerHTML;
-	var template = Handlebars.compile(source);
-
-	var context1 = { name: "John Doe", location: "Palo Alto, CA", birthday: "01/01/1990", occupation: "web developer", relationshipStatus: "single", interestedIn: "computer technology" };
-	var context2 = { name: "Jane Doe", location: "San Francisco, CA", birthday: "09/09/1999", occupation: "web developer", relationshipStatus: "single", interestedIn: "computer technology" };
-
-	var templateHtml = template(context1);
-
-	var placeHolder2 = document.getElementById("about");
-	placeHolder2.innerHTML = templateHtml;
-})();
-
 (function profileImgTemplate (){
 	var source   = document.getElementById("profile-img-template").innerHTML;
 	var template = Handlebars.compile(source);
@@ -36,16 +23,30 @@
 })();
 
 
-$.ajax({
+
+var myData = $.ajax({
 	method: "GET",
-	url: "http://localhost:3000/users/2",
-	dataType: "jsonp"
-}).then(function(data){
-	console.log('data:', data);
-})
+	url: "http://localhost:3000/users",
+	dataType: "jsonp",
+	success: function(data){
+		myData = data;	
+	}
+}).then(function(){
+	myTemplateFunction(myData);
+});
 
+var myTemplateFunction = function(templateData){
+	var source   = document.getElementById("about-template").innerHTML;
+	var template = Handlebars.compile(source);
 
+	var context1 = { name: "John Doe", location: "Palo Alto, CA", birthday: "01/01/1990", occupation: "web developer", relationshipStatus: "single", interestedIn: "computer technology" };
+	var context2 = { name: "Jane Doe", location: "San Francisco, CA", birthday: "09/09/1999", occupation: "web developer", relationshipStatus: "single", interestedIn: "computer technology" };
 
+	var templateHtml = template(templateData[1]);
+
+	var placeHolder2 = document.getElementById("about");
+	placeHolder2.innerHTML = templateHtml;
+};
 
 // var blogs = $ajax({
 // 	method: "GET",
