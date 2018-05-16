@@ -161,6 +161,10 @@ main .top-section figure.profile img {
   padding-bottom: 2px;
 }
 
+#about ul li span {
+  float: right;
+}
+
 
 
 /* ASIDE MENU ENDS HERE */
