@@ -4,11 +4,12 @@
   <head>
     <!--Bootstrap files -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./index.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./handlebars-v4.0.11.js"></script>
+    <script src="./utility.js" defer></script>
     <script src="./routing.js" defer></script>
     <script src="./blog.js" defer></script>
     <script src="./aboutMe.js" defer></script>
@@ -16,7 +17,10 @@
   </head>
 
   <body>
-    <p>My Face Application</p>
+    <ul>
+      <li id="blog">Blog</li>
+      <li id="gallery">Gallery</li>
+    </ul>
 
     <div id="app-placeholder"></div>
 
@@ -45,16 +49,25 @@
     </script>
 
     <script id="blog-template" type="text/x-handlebars-template">
-      <form action="" id="form1">
+      <form action="" id="blogForm">
         Title: <input type="text" name="title" id="title"><br>
         Content: <input type="text" name="content" id="content"><br>
-        <button form="form1" value="Submit">Submit</button>
+        <button form="blogForm" value="Submit">Post</button>
       </form>
 
       <div class="blog-container">
         {{#each this}}
-          <h1>Title: {{title}}</h1>
-          <p>Content: {{content}}</p>
+          <div class="blog-post">
+            <h1>Title: {{title}}</h1>
+            <p>Content: {{content}}</p>
+            <form action="" class="commentForm">
+              Comment: <input type="text" name="comment" id="comment"><br>
+              <button form="commentForm" value="Submit" data-blogid="{{id}}">Comment</button>
+            </form>
+            {{#each comments}}
+              <p>Comment: {{comment}}</p>
+            {{/each}}
+          </div>
         {{/each}}
       </div>
     </script>

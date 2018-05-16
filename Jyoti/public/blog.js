@@ -7,6 +7,14 @@ var getBlogData = function(){
   });
 };
 
+var getSpecificBlogData = function(id){
+  return $.ajax({
+    method: "GET",
+    url: "http://localhost:3000/blogs/" + id,
+    dataType: "json"
+  });
+};
+
 var updateBlogData = function(){
   getBlogData().then(function(data){
     blogsTemplateCompile(data);
@@ -14,17 +22,11 @@ var updateBlogData = function(){
 }
 
 var blogsTemplateCompile = function(templateData){
-  var source   = document.getElementById("blog-template").innerHTML;
-  var template = Handlebars.compile(source);
-
-  var html = template(templateData);
-
-  var placeholder = document.getElementById("blog-placeholder");
-  placeholder.innerHTML = html;
+  utility.templateCompiler(templateData, "blog-template", "blog-placeholder");
 };
 
 var bindBlogEventHandlers = function(){
-  $("#form1 button").click(function(e) {
+  $("#blogForm button").click(function(e) {
        // validate and process form here
       e.preventDefault();
       var title = $("input#title").val();
@@ -32,6 +34,7 @@ var bindBlogEventHandlers = function(){
       var dataForPassing = {};
       dataForPassing['title'] = title;
       dataForPassing['content'] = content;
+      dataForPassing['comments'] = [];
       console.log('blog dataForPassing', dataForPassing);
       $.ajax({
         method: "POST",
@@ -52,10 +55,40 @@ var bindBlogEventHandlers = function(){
   });
 }
 
+var bindCommentEventHandlers = function(){
+  $(".commentForm button").click(function(e) {
+       // validate and process form here
+      e.preventDefault();
+      var comment = $("input#comment").val();
+      var id = 1;
+      var commentData = {};
+      commentData['comment'] = comment;
+      getSpecificBlogData(id).then(function(data){
+        data.comments.push(commentData);
+        var dataForPassing = data;
+        $.ajax({
+          method: "PUT",
+          url: "http://localhost:3000/blogs/"+ id,
+          dataType: "json",
+          data: JSON.stringify(dataForPassing),
+          contentType: 'application/json',
+          success: function(data){
+            updateBlogData();
+          },
+          error: function(error){
+            console.log('dataForPassing error', dataForPassing);
+            console.log('error',error);
+          }
+        });
+      });
+  });
+}
+
 var blogInit = function(){
   getBlogData().then(function(data){
     blogsTemplateCompile(data);
     bindBlogEventHandlers();
+    bindCommentEventHandlers();
   });
 };
 

@@ -8,13 +8,7 @@ var getAboutMeData = function(){
 }
 
 var aboutMeTemplate = function(templateData){
-  var source   = document.getElementById("about-me-template").innerHTML;
-  var template = Handlebars.compile(source);
-
-  var html = template(templateData);
-
-  var placeholder = document.getElementById("about-me-placeholder");
-  placeholder.innerHTML = html;
+  utility.templateCompiler(templateData, "about-me-template", "about-me-placeholder");
 }
 
 var listenToAboutMeFieldChanges = function(){
