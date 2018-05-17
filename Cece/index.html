@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+  
+    <meta charset="UTF-8">
+    <title>MyFace</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -50,22 +53,34 @@
               <span class="glyphicon glyphicon-triangle-bottom"></span>about
             </header>
             <ul>
-              <li>name: {{name}} 
+              <li>
+                name: 
+                <input type="text" name="name" value="{{name}}" readonly>
                 <span class="glyphicon glyphicon-pencil"></span>
               </li>
-              <li>location: {{location}}
+              <li>
+                location: 
+                <input type="text" name="location" value="{{location}} readonly">
                 <span class="glyphicon glyphicon-pencil"></span>
               </li>
-              <li>birthday: {{birthday}}
-               <span class="glyphicon glyphicon-pencil"></span>
+              <li>
+                birthday: 
+                <input type="text" name="birthday" value="{{birthday}}" readonly>
+                <span class="glyphicon glyphicon-pencil"></span>
               </li>
-              <li>occupation: {{occupation}}
-               <span class="glyphicon glyphicon-pencil"></span>
+              <li>
+                occupation: 
+                <input type="text" name="occupation" value="{{occupation}}" readonly>
+                <span class="glyphicon glyphicon-pencil"></span>
               </li>
-              <li>relationship status: {{relationshipStatus}}
-               <span class="glyphicon glyphicon-pencil"></span>
+              <li>
+                relationship status: 
+                <input type="text" name="relationshipStatus" value="{{relationshipStatus}}" readonly>
+                <span class="glyphicon glyphicon-pencil"></span>
               </li>
-              <li>interested in: {{interestedIn}}
+              <li>
+                interested in: 
+                <input type="text" name="interestedIn" value="{{interestedIn}}" readonly>
                 <span class="glyphicon glyphicon-pencil"></span>
               </li>
             </ul>

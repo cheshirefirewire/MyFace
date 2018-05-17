@@ -22,30 +22,49 @@
 	cover.innerHTML = coverImgUrl;
 })();
 
+// AJAX CALLS START HERE
 
-
-var myData = $.ajax({
+// GET JSON DATA, USE IT IN THE ABOUT TEMPLATE
+var aboutMeData = $.ajax({
 	method: "GET",
 	url: "http://localhost:3000/users",
-	dataType: "jsonp",
+	dataType: "json",
 	success: function(data){
-		myData = data;	
-	}
+		// Send data back to the locale variable
+		aboutMeData = data;	
+	} //success
 }).then(function(){
-	myTemplateFunction(myData);
+	aboutMeTemplateFunction(aboutMeData);
+	listenToAboutMeFieldChanges();
 });
 
-var myTemplateFunction = function(templateData){
+var aboutMeTemplateFunction = function(templateData){
 	var source   = document.getElementById("about-template").innerHTML;
 	var template = Handlebars.compile(source);
 
-	var context1 = { name: "John Doe", location: "Palo Alto, CA", birthday: "01/01/1990", occupation: "web developer", relationshipStatus: "single", interestedIn: "computer technology" };
-	var context2 = { name: "Jane Doe", location: "San Francisco, CA", birthday: "09/09/1999", occupation: "web developer", relationshipStatus: "single", interestedIn: "computer technology" };
-
 	var templateHtml = template(templateData[1]);
 
-	var placeHolder2 = document.getElementById("about");
-	placeHolder2.innerHTML = templateHtml;
+	var placeHolder = document.getElementById("about");
+	placeHolder.innerHTML = templateHtml;
+};// GET JSON DATA, USE IT IN THE ABOUT TEMPLATE - ends here
+
+// MAKE ABOUT ME LIST EDITABLE
+
+var listenToAboutMeFieldChanges = function(){
+	var aboutMeList = document.querySelector("#about ul");
+	aboutMeList.addEventListener("click", function($event){
+		$event.stopPropagation();
+		var target = $event.target;
+		if($(target).hasClass("glyphicon-pencil")){
+			var fieldToEdit = $(target).closest("li").find("input")[0];
+			var fieldCurrentText = fieldToEdit.value;
+			$(fieldToEdit).attr("readonly", false);
+
+			fieldToEdit.addEventListener("focusout", function($event){
+				$(fieldToEdit).attr("readonly", true);
+			});
+		}
+	});
 };
 
 // var blogs = $ajax({
@@ -71,6 +90,3 @@ var myTemplateFunction = function(templateData){
 // 	// Get some values from elements on the page:
 // 	var form = $(this);
 // });
-
-
-
