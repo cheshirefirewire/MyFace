@@ -9,21 +9,18 @@
       "relationshipStatus": "married",
       "interestedIn": "computer development",
       "profileImage": "profile1.png",
-      "backgroundImage": "cover1.jpg",
-      "model": "JoseD"
+      "backgroundImage": "cover1.jpg"
     },
     {
       "id": 2,
-      "name": "Mariah",
+      "name": "Zelda",
       "location": "San Francisco, CA",
       "birthday": "01/01/1991",
       "occupation": "programmer",
       "relationshipStatus": "single",
       "interestedIn": "meditation, surfing",
       "profileImage": "profile2.png",
-      "backgroundImage": "cover2.jpg",
-      "model": "JaneD",
-      "undefined": "Jane"
+      "backgroundImage": "cover2.jpg"
     },
     {
       "id": 3,
@@ -34,8 +31,7 @@
       "relationshipStatus": "single",
       "interestedIn": "meditation, hiking",
       "profileImage": "profile3.png",
-      "backgroundImage": "cover3.jpg",
-      "model": "SandyD"
+      "backgroundImage": "cover3.jpg"
     }
   ]
 }
