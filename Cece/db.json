@@ -2,30 +2,40 @@
   "users": [
     {
       "id": 1,
-      "name": "Steven Paul Jobs", 
-      "location": "Palo Alto, CA", 
-      "birthday": "02/24/1955", 
-      "occupation": "entrepreneur", 
-      "relationshipStatus": "married", 
-      "interestedIn": "computer development"
+      "name": "Steven Paul Jobs",
+      "location": "Palo Alto, CA",
+      "birthday": "02/24/1955",
+      "occupation": "entrepreneur",
+      "relationshipStatus": "married",
+      "interestedIn": "computer development",
+      "profileImage": "profile1.png",
+      "backgroundImage": "cover1.jpg",
+      "model": "JoseD"
     },
     {
       "id": 2,
-      "name": "Kate", 
-      "location": "Los Angeles, CA", 
-      "birthday": "01/01/1991", 
-      "occupation": "programmer", 
-      "relationshipStatus": "single", 
-      "interestedIn": "meditation, surfing"
+      "name": "Mariah",
+      "location": "San Francisco, CA",
+      "birthday": "01/01/1991",
+      "occupation": "programmer",
+      "relationshipStatus": "single",
+      "interestedIn": "meditation, surfing",
+      "profileImage": "profile2.png",
+      "backgroundImage": "cover2.jpg",
+      "model": "JaneD",
+      "undefined": "Jane"
     },
     {
       "id": 3,
-      "name": "Joy", 
-      "location": "New York, NJ", 
-      "birthday": "03/06/1993", 
-      "occupation": "programmer, designer", 
-      "relationshipStatus": "single", 
-      "interestedIn": "meditation, hiking"
+      "name": "Joy",
+      "location": "New York, NJ",
+      "birthday": "03/06/1993",
+      "occupation": "programmer, designer",
+      "relationshipStatus": "single",
+      "interestedIn": "meditation, hiking",
+      "profileImage": "profile3.png",
+      "backgroundImage": "cover3.jpg",
+      "model": "SandyD"
     }
   ]
 }
