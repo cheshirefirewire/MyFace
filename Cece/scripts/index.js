@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+=======
+(function aboutTemplate (){
+	var source   = document.getElementById("about-template").innerHTML;
+	var template = Handlebars.compile(source);
+
+	var context1 = { name: "John Doe", location: "Palo Alto, CA", birthday: "01/01/1990", occupation: "web developer", relationshipStatus: "single", interestedIn: "computer technology" };
+	var context2 = { name: "Jane Doe", location: "San Francisco, CA", birthday: "09/09/1999", occupation: "web developer", relationshipStatus: "single", interestedIn: "computer technology" };
+
+	var templateHtml = template(context1);
+
+	var placeHolder2 = document.getElementById("about");
+	placeHolder2.innerHTML = templateHtml;
+})();
+
+>>>>>>> 5398098e9158b7126838260d7eb7ce249b4c9821
 (function profileImgTemplate (){
 	var source   = document.getElementById("profile-img-template").innerHTML;
 	var template = Handlebars.compile(source);
@@ -22,6 +38,7 @@
 	cover.innerHTML = coverImgUrl;
 })();
 
+<<<<<<< HEAD
 // AJAX CALLS START HERE
 
 // GET JSON DATA, USE IT IN THE ABOUT TEMPLATE
@@ -115,3 +132,31 @@ var updateUserObject = function(prop, value){
 // 	// Get some values from elements on the page:
 // 	var form = $(this);
 // });
+=======
+var blogs = $ajax({
+	method: "GET",
+	url: "http://localhost/3000/blogs",
+	dataType: "json",
+	success: function (data) {
+		// Send data back to the locale variable
+		blogs = data;
+	}
+}).then(function(data){
+	console.log('data: ', data);
+	blogsTemplate(data);
+});
+
+var blogsTemplate = function (templateData){
+
+};
+
+$("#form1").submit(function(event){
+	event.preventDefault();
+
+	// Get some values from elements on the page:
+	var form = $(this);
+});
+
+
+
+>>>>>>> 5398098e9158b7126838260d7eb7ce249b4c9821

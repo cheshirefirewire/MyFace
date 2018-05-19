@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "users": [
     {
@@ -35,3 +36,6 @@
     }
   ]
 }
+=======
+{"id":1, "title": "this is my blog title", "content": "this is my content"}
+>>>>>>> 5398098e9158b7126838260d7eb7ce249b4c9821
