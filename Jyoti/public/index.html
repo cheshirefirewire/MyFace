@@ -13,6 +13,7 @@
     <script src="./routing.js" defer></script>
     <script src="./blog.js" defer></script>
     <script src="./aboutMe.js" defer></script>
+    <script src="./gallery.js" defer></script>
     <script src="./index.js" defer></script>
   </head>
 
@@ -31,6 +32,7 @@
 
     <script id="gallery-page" type="text/x-handlebars-template">
       <div id="about-me-placeholder"></div>
+      <div id="gallery-placeholder"></div>
     </script>
 
     <script id="about-me-template" type="text/x-handlebars-template">
@@ -69,6 +71,19 @@
             {{/each}}
           </div>
         {{/each}}
+      </div>
+    </script>
+
+    <script id="gallery-template" type="text/x-handlebars-template">
+      <div class="gallery-container">
+        {{#each galleryImages}}
+          <img src={{imageUrl}}></img>
+        {{/each}}
+        <div class="gallery-modal">
+          <div class="modal-image-container">
+            <div class="modal-image"></div>
+          </div>
+        </div>
       </div>
     </script>
 

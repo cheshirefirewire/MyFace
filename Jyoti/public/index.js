@@ -1,9 +1,5 @@
-//if user clicks on blog
-router.renderPage('blog');
-
-//if user clicks on gallery
-// router.renderPage('gallery');
-
+//default landing page
+router.renderPage('gallery');
 
 $('#blog').click(function(){
   router.renderPage('blog');
