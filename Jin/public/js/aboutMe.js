@@ -1,17 +1,41 @@
-var myData = $.ajax({
+var getAboutMeData = function(){
+	return $.ajax({
 	method: 'GET',
 	url : 'http://localhost:3000/user',
-	dataType: 'jsonp',
-	success: function(data){
-		myData = data;
-	}
-}).then(function(data){
-	coverImgTemplate(data[0].backgroundImage);
-	profileImgTemplate(data[0].profileImage);
-	populateUserInfo(data[0]);
+	dataType: 'json',
+	});
+}
+
+function addEventListeners(){
+
 	document.getElementById('user-data-head').addEventListener('click', moveInfo);
 	document.getElementById('user-data-holder').addEventListener('click', editUserInfo);
-});
+	
+	$('#render-blog-btn').click(function(){
+		$('#gallery-holder').hide();
+		$('#blog-holder').show();
+		var location = '#blog';
+        if(history.pushState) {
+            history.pushState(null, null, location);
+        }
+        else {
+            location.hash = location;
+        }
+	});
+
+	$('#render-gallery-btn').click(function(){
+		$('#blog-holder').hide();
+		$('#gallery-holder').show();
+		var location = '#gallery';
+		if(history.pushState) {
+            history.pushState(null, null, location);
+        }
+        else {
+            location.hash = location;
+        }
+	});
+
+}
 
 function coverImgTemplate(url){
 	var source   = document.getElementById("cover-img").innerHTML;
@@ -77,14 +101,43 @@ function editUserInfo(){
 		fieldToEdit.focus();
 		fieldToEdit.val(val);
 		fieldToEdit.blur(function(){
-			saveNewInfo(fieldToEdit.val());
-			fieldToEdit.removeClass('editing');
-			fieldToEdit.attr('readonly', 'true');
+			if(val != fieldToEdit.val()){
+				saveNewInfo(fieldToEdit.val(), fieldToEdit.attr('model'));
+				fieldToEdit.removeClass('editing');
+				fieldToEdit.attr('readonly', 'true');
+			}
 		});
 	}
 }
 
-function saveNewInfo(data){
-	console.log(data);
-	//This would be a PUT request if the server worked.
+function saveNewInfo(newVal, model){
+	var passedData = {};
+	passedData[model] = newVal;
+	
+	$.ajax({
+		method: "PATCH",
+		url: "http://localhost:3000/user/1",
+		dataType: "json",
+		data: JSON.stringify(passedData),
+		contentType: 'application/json',
+		success: function(){
+		  console.log(model + " was updated to " + newVal);
+		},
+		error: function(){
+		  console.log('error');
+		}
+	  });
 }
+
+function initAboutMe(){
+    getAboutMeData().then(function(data){
+        coverImgTemplate(data[0].backgroundImage);
+        profileImgTemplate(data[0].profileImage);
+        populateUserInfo(data[0]);
+        addEventListeners();
+    });
+}
+
+router.registerInitHandler('blog', initAboutMe);
+router.registerInitHandler('gallery', initAboutMe);
+

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="main.css" type="text/css">
+<script src="js/handlebars.js"></script>
+<script src="js/routing.js" defer></script>
+<script src="js/aboutMe.js" defer></script>
+<script src="js/blog.js" defer></script>
+<script src="js/index.js" defer></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+<body>
+<header class="header-main col-xs-12">
+	<a href="#">
+		<img src="assets/myface_logo.png" class="home-icon offset-xs-0 offset-lg-2" alt="m"/>
+	</a>
+</header>
+<section class="banner-section col-xs-12 col-lg-8 offset-lg-2">
+	<div class="p-15">
+		<div id="background-outer">
+
+		</div>
+		<div class="menu-bar">
+			<div class="profile-holder">
+				<div class="profile-outer" id="profile-outer">
+					
+				</div>
+			</div>
+			<nav class="main-nav">
+				<ul>
+					<li>
+						<a href="javascript:void(0)" id="render-blog-btn">Blog</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)"  id="render-gallery-btn">Galleries</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div id="app-placeholder" class="col-xs-12 col-lg-8 offset-lg-2 row">
+		<script id="blog-placeholder" type="text/x-handlebars-template">
+			<div class="col-lg-4 col-xs-12" id="about-holder">
+				<div class="box" id="about-box">
+					<div class="box-head" id="user-data-head">
+						<strong><i class="fas fa-caret-down"></i> About</strong>
+					</div>
+					<div class="box-body open" id="box-body">
+						
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-8 col-xs-12" id="blog-holder">
+				<div class="box" id="new-post">
+					<div class="box-head" id="user-data-head">
+						<strong>New Post</strong>
+					</div>
+					<div class="box-body " id="box-body">
+						<div id="new-post-form" action="http://localhost:3000/blogs" method="post">
+							<input type="text" model="title" id="new-post-title"/>
+							<textarea type="text" model="content" id="new-post-content"></textarea>
+							<a id="submit-post" href="#">Post</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<script id="gallery-placeholder" type="text/x-handlebars-template">
+				<div class="box" id="about-box">
+					<div class="box-head" id="user-data-head">
+						<strong><i class="fas fa-caret-down"></i> About</strong>
+					</div>
+					<div class="box-body open" id="box-body">
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-8 col-xs-12" id="gallery-holder">
+			</div>
+		</script>
+	</div>
+</section>
+
+<script id="cover-img" type="text/x-handlebars-template">
+	<div class="background" style="background-image: url('{{src}}')"></div>
+</script>
+
+<script id="profile-img" type="text/x-handlebars-template">
+	<img src="{{profileImg}}"/>
+</script>
+
+<script id="user-data" type="text/x-handlebars-template">
+	<ul class="user-data-holder" id="user-data-holder">
+		<li>Name: <input value="{{name}}" model="name" readonly></input>
+			<span><i class="far fa-edit"></i></span>
+		<li>
+			Location: <input value="{{location}}" model="location" readonly></input>
+			<span><i class="far fa-edit"></i></span>
+		</li>
+		<li>
+			Birthday: <input value="{{birthday}}" model="birthday" readonly></input>
+			<span><i class="far fa-edit"></i></span>
+		</li>
+		<li>
+			Occupation: <input value="{{occupation}}" model="occupation" readonly></input>
+			<span><i class="far fa-edit"></i></span>
+		</li>
+		<li>
+			Relationship Status: <input value="{{relationship}}" model="relationship" readonly></input>
+			<span><i class="far fa-edit"></i></span>
+		</li>
+		<li>
+			Interested in: <input value="{{interest}}" model="interest" readonly></input>
+			<span><i class="far fa-edit"></i></span>
+		</li>
+	</ul>
+</script>
+
+<script id="blog-template" type="text/x-handlebars-template">
+	{{#each this}}
+	<div class="box">
+		<div class="box-head" id="user-data-head">
+			<strong>{{this.title}}</strong>
+		</div>
+		<div class="box-body" id="box-body">
+			<p>
+				{{this.content}}
+			</p>
+		</div>
+	</div>
+	{{/each}}
+</script>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+</body>
+</html>
