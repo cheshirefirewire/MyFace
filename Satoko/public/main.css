@@ -96,8 +96,8 @@ nav li:last-child {
 	padding: 40px 0 0 0;
 }
 
-.post-container {
-	height: 250px;
+.article-div {
+	height: 100%;
 	border: 1px solid #D7D7D7;
 	background-color: #fff;
 	border-top: none;
@@ -108,8 +108,10 @@ nav li:last-child {
 	padding: 20px;
 	height: 100%;
 }
-
-.post-container textarea, .post-container input {
+.new-post .article-div {
+	height: 300px;
+}
+.article-div textarea, .article-div input {
 	display: inline-block;
 	margin-bottom: 5px;
 	width: 100%;
@@ -117,15 +119,19 @@ nav li:last-child {
 }
 
 textarea {
-	height: 80%;
+	height: 70%;
+}
+
+.submit-button {
+	float: right;
 }
 
 .article {
 	margin-top: 40px;
 }
 
-div.article-div {
-	height: 100%;
+.post-container {
+	margin-top: 30px;
 }
 
 .article-content {
