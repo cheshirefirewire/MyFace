@@ -1,27 +1,13 @@
-console.log("working!");
-
-(function entryTemplate (){
-	var source   = document.getElementById("entry-template").innerHTML;
-	var template = Handlebars.compile(source);
-
-	var context = {title: "My New Post", body: "This is my first post!"};
-	var templateHtml = template(context);
-
-	var placeHolder = document.getElementById("place-holder");
-	placeHolder.innerHTML = templateHtml;
-
-})();
-
 (function aboutTemplate (){
 	var source   = document.getElementById("about-template").innerHTML;
 	var template = Handlebars.compile(source);
 
-	var context1 = { name: "Steven Paul Jobs", location: "Palo Alto, California", birthday: "02/24/1955", occupation: "entrepreneur", relationshipStatus: "married", interestedIn: "computer tech development" };
-	var context2 = { name: "Bill Gates", location: "Medina, Washington", birthday: "10/28/1955", occupation: "founder, business man", relationshipStatus: "married", interestedIn: "computer technology" };
+	var context1 = { name: "John Doe", location: "Palo Alto, CA", birthday: "01/01/1990", occupation: "web developer", relationshipStatus: "single", interestedIn: "computer technology" };
+	var context2 = { name: "Jane Doe", location: "San Francisco, CA", birthday: "09/09/1999", occupation: "web developer", relationshipStatus: "single", interestedIn: "computer technology" };
 
 	var templateHtml = template(context1);
 
-	var placeHolder2 = document.getElementById("place-holder2");
+	var placeHolder2 = document.getElementById("about");
 	placeHolder2.innerHTML = templateHtml;
 })();
 

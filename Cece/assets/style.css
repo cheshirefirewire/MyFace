@@ -4,12 +4,17 @@ html {
 body {
   background-color: #E9EAEE;
   height: 100%;
+  color: #6A7480;
 }
 
 .header-bar {
   height: 36px;
   background-color: #4461A2;
   padding: 5px 0 0 5px;
+  border-bottom: 1px solid #000;
+  position: fixed;
+  top: 0;
+  z-index: 3;
 }
 
 .header-bar div {
@@ -20,16 +25,18 @@ main {
   height: 100%;
 }
 
+/* TOP SECTION STARTS HERE */
+
 main .top-section {
-  border: 1px solid #E1E1E1;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border: 1px solid #D2D2D2;
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
   height: 41.7%;
   min-height: 186px;
   background-color: #FFF;
-  padding: 0;
+  padding: 36px 0 0;
   position: relative;
-  margin-bottom: 36px;
+  margin-bottom: 50px;
 }
 
 main .top-section #cover {
@@ -53,8 +60,8 @@ main .top-section nav {
   min-height: 36px;
   padding: 0;
   background-color: #FFF;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
 }
 
 main .top-section nav ul {
@@ -63,26 +70,26 @@ main .top-section nav ul {
   height: 100%;
   background-color: #FFF;
   margin-left: 154px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
 }
 
 main .top-section nav ul li {
   display: inline-block;
   height: 100%;
   padding: 5px 16px 2px 16px;
-  border-right: 1px solid #E1E1E1;
+  border-right: 1px solid #D2D2D2;
 }
 
 main .top-section nav ul li:nth-child(1) {
-  border-left: 1px solid #E1E1E1;
+  border-left: 1px solid #D2D2D2;
 }
 
 main .top-section nav ul li a {
   height: 100%;
   text-decoration: none;
   display: inline-block;
-  color: #000081;
+  color: #3B5998;
     /* vertical-align: middle; */
 }
 
@@ -93,10 +100,10 @@ main .top-section figure.profile {
   border-radius: 2%;
   position: absolute;
   width: 130px;
-  bottom: -40px;
+  bottom: -28px;
   z-index: 3;
   left: 12px;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #D2D2D2;
 }
 
 main .top-section figure.profile img {
@@ -104,3 +111,60 @@ main .top-section figure.profile img {
   height: 100%;
   width: 100%;
 }
+
+/* TOP SECTION ENDS HERE */
+
+/* COMMOM BOX STARTS HERE */
+
+.common-box {
+  background-color: #FFF;
+  border: 1px solid #D2D2D2;
+  border-radius: 2%;
+}
+
+.common-box header {
+  background-color: #F9FAFB;
+  padding: 10px 15px;
+  border-top-right-radius: 7%;
+  border-top-left-radius: 7%;
+  border-bottom: 1px solid #D2D2D2;
+}
+
+/* COMMOM BOX ENDS HERE */
+
+/* ASIDE MENU STARTS HERE */
+
+.main-content {
+  padding: 0;
+}
+
+#about {
+  padding: 0;
+}
+
+#about header span {
+  margin-right: 4px;
+}
+
+#about ul {
+  list-style: none;
+  padding: 0 15px;
+}
+
+#about ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #D2D2D2;
+}
+
+#about ul li:last-child {
+  border-bottom: none;
+  padding-bottom: 2px;
+}
+
+#about ul li span {
+  float: right;
+}
+
+
+
+/* ASIDE MENU ENDS HERE */

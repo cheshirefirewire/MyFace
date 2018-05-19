@@ -3,6 +3,7 @@
   <head>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/style.css" />
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -37,32 +38,36 @@
         </nav>
       </section>
 
-      <section class="col-md-8 offset-md-2">
-        <p>Cece's MyFace Application</p>
-        <div id="place-holder"></div>
-        <div id="place-holder2"></div>
+      <section class="col-md-8 offset-md-2 main-content">
+        <div id="about" class="col-md-4"></div>
+        <div id="blog" class="col-md-8"></div>
       </section>
-  
-      <script id="entry-template" type="text/x-handlebars-template">
-        <div class="entry">
-          <h1>{{title}}</h1>
-          <div class="body">
-            {{body}}
-          </div>
-        </div>
-      </script>
 
       <script id="about-template" type="text/x-handlebars-template">
         <div class="entry">
-          <aside>
-            <header><i></i>about</header>
+          <aside class="common-box">
+            <header>
+              <span class="glyphicon glyphicon-triangle-bottom"></span>about
+            </header>
             <ul>
-              <li>name: {{name}}</li>
-              <li>location: {{location}}</li>
-              <li>birthday: {{birthday}}</li>
-              <li>occupation: {{occupation}}</li>
-              <li>relationship status: {{relationshipStatus}}</li>
-              <li>interested in: {{interestedIn}}</li>
+              <li>name: {{name}} 
+                <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>location: {{location}}
+                <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>birthday: {{birthday}}
+               <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>occupation: {{occupation}}
+               <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>relationship status: {{relationshipStatus}}
+               <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>interested in: {{interestedIn}}
+                <span class="glyphicon glyphicon-pencil"></span>
+              </li>
             </ul>
           </aside>
         </div>
