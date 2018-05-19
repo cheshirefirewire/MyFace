@@ -32,12 +32,16 @@ main .top-section {
   margin-bottom: 36px;
 }
 
-main .top-section .cover {
+main .top-section #cover {
   height: 100%;
   min-height: 150px;
   background-color: #FFF;
   width: 100%;
-  background-image: url("../assets/images/cover.jpg");
+}
+
+main .top-section #cover .cover {
+  height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
