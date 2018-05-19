@@ -1,0 +1,121 @@
+
+body {
+    background-color: lightgray;    
+}
+
+header#banner { 
+    height: 30px;
+    width: 100%;
+    background-color: #4267b2;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    width: 75%;
+    margin: auto;
+    margin-top: 1px;
+}
+
+article#profile {
+    top: 100px;
+}
+
+.profile-background {
+    margin: auto;
+    width: 75%;
+    height: 300px;
+    background-image: url("assets/cover.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.profile-container {
+    margin: auto;
+    width: 75%; 
+    position: relative;
+}
+
+.profile-image {
+    position: absolute;
+    float: left;
+    bottom: 10px;
+    margin-left: 20px;
+    border: solid 1px black;    
+}
+
+.photo {
+    padding: 2px;
+    object-fit: cover;
+    border: solid 5px white;
+}
+
+.profile-nav {
+    padding-left: 40%;
+    background-color: white;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.user-info {
+    font-size: 0.7em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.profile-nav li {
+    display: inline;
+    padding: 0 10px 0 10px;
+    border-left-color: blue;
+    border-right-width: thin;
+    border-left-width: thin;
+}
+
+article#user {
+    margin-top: 30px;
+    margin: auto;
+    width: 75%;     
+}
+
+.about {
+    display: inline-block;
+    width: 30%;
+    background-color: white;
+    float: left;
+    border-radius: 3px;
+}
+
+.about-button {
+    border-radius: 3px;
+    background-color: white !important;
+    color: #666060;
+    text-align: left;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-image: none !important;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    color: #666060;
+}
+
+.about li {
+    margin-left: 10px;
+}
+
+.blogs {
+    float: right;
+    width: 60%;
+    background-color: white;
+}
+
+.head {
+    height: 50px;
+    background-image: url("./assets/bg.png");
+}
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Bootstrap files -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <!-- ctrl+shift+p oreview -->
+  <body>
+    <header id="banner">
+        <div class="logo">
+            <img src="assets/myface_logo.png" />
+        </div>   
+    </header>
+    <article id="profile">
+        <div class="profile-background">
+        </div>
+        <div class="profile-container">
+            <nav class="profile-nav">
+                <ul>
+                    <li>blog</li>
+                    <li>content</li>
+                </ul>
+            </nav>
+            <div class="profile-image">
+                <img class="photo" src="assets/profile.png" />
+            </div>
+        </div>
+    </article>
+
+    <article id="user">
+        <div id="aboutMe-placeholder">
+
+        </div>
+
+        <section class="blogs">
+            Blogs
+            <section>
+                <header>
+                    Blog1
+                </header>
+                <div>
+
+                </div>
+            </section>
+        </section>
+
+    </article>
+    <script id="entry-template" type="text/x-handlebars-template">
+        <div class="entry">
+            <h1>{{title}}</h1>
+            <div class="body">
+            <ul>
+                <li></li>
+
+            </ul>
+            </div>
+        </div>
+    <script id="about-template" type="text/x-handlebars-template">
+        <div class="dropdown about">
+            
+            <button class="about-button btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+            <span class="caret"></span>about</button>
+
+            <ul class="dropdown-menu" role="menu">
+                <li>name <input model="name" value=“{{name}}” readonly></input><span class=“fieldEditor”>&#9998;</span></li>
+                <li>location: {{location}}</li>
+                <li>birthday: {{birthday}}</li>
+                <li>occupation:{{occupation}}</li>
+                <li>relationship status: {{relationshipStatus}}</li>
+                <li>interested in: {{interests}}” readonly></li>
+            </ul> 
+                       
+        </div>
+    </script>
+
+<!--
+      
+    <div class="content">
+        <div class="profile">
+            <img src="assets/cover.jpg" alt="profile background" style="width: 100%; height: auto" />
+            <span class="profile-image">
+                <img class="photo" src="assets/profile.png" alt="profile photo" style="width: 75%; height: 85%" />
+            </span >
+            <nav class="profile-nav">
+                <ul>
+                    <li><a href="blog.html">blog</a></li>
+                    <li><a href="galleries.html">galleries</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="about">
+
+        </div>
+        <div class="blog">
+            BLOG SECTION
+        </div> 
+    </div>
+    <div id="aboutMe-placeholder">
+
+    </div>
+    <div id="blog-placeholder">
+
+    </div>
+
+-->
+  <!-- Latest compiled and minified JavaScript -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./handlebars-v4.0.11.js"></script>
+    <script src="./index.js" defer></script>
+
+  </body>
+</html>
