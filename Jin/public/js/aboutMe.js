@@ -7,64 +7,29 @@ var getAboutMeData = function(){
 }
 
 function addEventListeners(){
-
 	document.getElementById('user-data-head').addEventListener('click', moveInfo);
 	document.getElementById('user-data-holder').addEventListener('click', editUserInfo);
-	
+
 	$('#render-blog-btn').click(function(){
-		$('#gallery-holder').hide();
-		$('#blog-holder').show();
-		var location = '#blog';
-        if(history.pushState) {
-            history.pushState(null, null, location);
-        }
-        else {
-            location.hash = location;
-        }
+		router.renderPage('blog');
 	});
 
 	$('#render-gallery-btn').click(function(){
-		$('#blog-holder').hide();
-		$('#gallery-holder').show();
-		var location = '#gallery';
-		if(history.pushState) {
-            history.pushState(null, null, location);
-        }
-        else {
-            location.hash = location;
-        }
-	});
-
+		router.renderPage('gallery');
+	})
 }
 
 function coverImgTemplate(url){
-	var source   = document.getElementById("cover-img").innerHTML;
-	var template = Handlebars.compile(source);
-
-	var trueSrc = 'assets/'+url;
-	var context = {src: trueSrc};
-	var html    = template(context);
-
-	var placeholder = document.getElementById('background-outer');
-	placeholder.innerHTML = html;
+	$('#background-outer').html('');
+	utility.templateCompiler({src: 'assets/'+url}, 'cover-img', 'background-outer');
 }
 
 function profileImgTemplate(url){
-	var source   = document.getElementById("profile-img").innerHTML;
-	var template = Handlebars.compile(source);
-
-	var trueSrc = 'assets/'+url;
-	var context = {profileImg: trueSrc};
-	var html    = template(context);
-
-	var placeholder = document.getElementById('profile-outer');
-	placeholder.innerHTML = html;
+	$('#profile-outer').html('');
+	utility.templateCompiler({profileImg: 'assets/'+url}, 'profile-img', 'profile-outer');
 }
 
 function populateUserInfo(userData){
-	var source   = document.getElementById("user-data").innerHTML;
-	var template = Handlebars.compile(source);
-
 	var context = {
 		name: userData.name,
 		location: userData.location,
@@ -73,10 +38,7 @@ function populateUserInfo(userData){
 		relationship: userData.relationshipStatus,
 		interest: userData.interestedIn
 	};
-	var html = template(context);
-
-	var placeholder = document.getElementById('box-body');
-	placeholder.innerHTML = html;
+	utility.templateCompiler(context, 'user-data', 'about-holder');
 }
 
 function moveInfo(){
@@ -131,7 +93,7 @@ function saveNewInfo(newVal, model){
 
 function initAboutMe(){
     getAboutMeData().then(function(data){
-        coverImgTemplate(data[0].backgroundImage);
+		coverImgTemplate(data[0].backgroundImage);
         profileImgTemplate(data[0].profileImage);
         populateUserInfo(data[0]);
         addEventListeners();

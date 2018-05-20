@@ -14,12 +14,14 @@
   ],
   "blogs": [
     {
-      "title": "This is my 2nd title",
-      "content": "Here is my content"
-    },
-    {
+      "id": 1,
       "title": "This is my blog title",
-      "content": "Here is my content"
+      "content": "Here is my content",
+      "comments": [
+        {
+          "comment": "my fancy comment"
+        }
+      ]
     }
   ]
 }
