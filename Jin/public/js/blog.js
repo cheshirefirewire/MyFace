@@ -6,41 +6,92 @@ var getBlogData = function(){
     });
 }
 
-function blogsTemplate(data){
-	var source   = document.getElementById("blog-template").innerHTML;
-    var template = Handlebars.compile(source);
-    
-    var html = template(data);
+var getSpecificBlogData = function(id){
+    return $.ajax({
+        method: "GET",
+        url: "http://localhost:3000/blogs/" + id,
+        dataType: "json"
+    });
+};
 
-	var placeholder = document.getElementById('blog-holder');
-	placeholder.innerHTML += html;
+var updateBlogData = function(){
+    getBlogData().then(function(data){
+      blogsTemplateCompile(data);
+    });
+}  
+
+var blogsTemplateCompile = function(data){
+    $('#blog-holder').html('');
+    utility.templateCompiler(data, 'blog-template', 'blog-holder');
 }
 
-/*function newBlog(){
-    var title = $('#new-post-title').val();
-    var content = $('#new-post-content').val();
-    if(title && content){
-        var newPost = {
-            title: title,
-            content: content
-        };
+var bindBlogEventHandlers = function(){
+    
+    $("#submit-post").click(function(e) {
 
-        $.ajax({
-            method: 'POST',
-            url: 'http://localhost:3000/blogs/',
-            data: JSON.stringify(newPost),
-            dataType: 'json',
-            contentType: 'application/json'
+        var title = $("#new-post-title").val();
+        var content = $("#new-post-content").val();
+
+        if(title && content){
+            var dataForPassing = {};
+
+            dataForPassing['title'] = title;
+            dataForPassing['content'] = content;
+            dataForPassing['comments'] = [];
+
+            $.ajax({
+            method: "POST",
+            url: "http://localhost:3000/blogs/",
+            dataType: "json",
+            data: JSON.stringify(dataForPassing),
+            contentType: 'application/json',
+            success: function(data){
+                updateBlogData();
+            },
+            error: function(error){
+                console.log(error);
+            }
+            });
+        }
+    });
+  }
+  
+  var bindCommentEventHandlers = function(){
+    $(".commentForm button").click(function(e) {
+
+        e.preventDefault();
+        var comment = $("input#comment").val();
+        var id = 1;
+        var commentData = {};
+
+        commentData['comment'] = comment;
+
+        getSpecificBlogData(id).then(function(data){
+            data.comments.push(commentData);
+            var dataForPassing = data;
+
+            $.ajax({
+                method: "PUT",
+                url: "http://localhost:3000/blogs/"+ id,
+                dataType: "json",
+                data: JSON.stringify(dataForPassing),
+                contentType: 'application/json',
+                success: function(data){
+                    updateBlogData();
+                },
+                error: function(error){
+                    console.log(error);
+                }
+            });
         });
-    }
-}*/
+    });
+  }
 
-function initBlog(){
+var initBlog = function(){
     getBlogData().then(function(data){
-        blogsTemplate(data);
-        $('#submit-post').click(function(){
-            newBlog();
-        });
+        blogsTemplateCompile(data);
+        bindBlogEventHandlers();
+        bindCommentEventHandlers();
     });
 }
 
