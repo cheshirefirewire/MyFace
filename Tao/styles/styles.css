@@ -7,6 +7,10 @@ body #main .row {
   margin:0;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .top-header {
     background-color: #3663A3;
     padding: 5px;
@@ -56,15 +60,36 @@ ul.nav li:first-child {
   border-left:1px solid #BDBDBD;
 }
 
-/* about box styling */
+/* about and blog box styling */
 
-.about-container {
+.blog-box-container{
+  padding:0;
+}
+
+.about-box-container {
+  padding:0 1.5rem 0 0;
+}
+
+.about-container,
+.post-container,
+.blog-container {
   border:1px solid #BDBDBD;
   background-color:#FFFFFF;
   padding: 0;
   margin:0;
   color: #424242;
-  border-radius:5px;
+  border-radius:3px;
+}
+
+.post-container,
+.blog-container {
+  padding-right:0;
+}
+
+@media (min-width:728px) {
+  .blog-box-container {
+    padding-left:1rem;
+  }
 }
 
 .about-container .accordion-toggle:after {
@@ -77,23 +102,25 @@ ul.nav li:first-child {
   content: "\f0da";  /* adjust as needed, taken from font-awesome.css */
 }
 
-.title-about {
+.title-about, .title-new-post, .title-blog-post {
   padding:10px 0 10px 20px;
   border-bottom:1px solid #BDBDBD;
+  background-color:#F8F5F5;
+  font-weight:700;
 }
 
 .title-about a {
   margin-right:0.5rem;
 }
 
-ul.list-about {
-  list-style: none;
+ul.list-about, ul.new-post-list, ul.blog-post-list {
   padding: 0;
   margin:0;
   font-size:0.8rem;
 }
 
-ul.list-about li {
+ul.list-about li,
+ul.blog-post-list li {
   padding:10px 0;
   margin: 0 20px;
   border-bottom:1px solid #BDBDBD;
@@ -108,7 +135,8 @@ ul.list-about li:first-child {
   display:none;
 }
 
-ul.list-about li:last-child {
+ul.list-about li:last-child,
+ul.blog-post-list li:last-child {
   border-bottom:none;
 }
 
@@ -116,3 +144,29 @@ ul.list-about span {
   cursor:pointer;
   float:right;
 }
+
+.new-post{
+  padding: 15px;
+}
+
+ul.new-post-list li{
+  margin-bottom:.1rem;
+}
+
+ul.blog-post-list li {
+  margin-bottom:.5rem;
+}
+
+ul.new-post-list li input,
+ul.new-post-list li textarea,
+ul.blog-post-list li input {
+  width:100%;
+  border:1px solid #BDBDBD;
+}
+
+.blog-container {
+  margin:1rem 0 0 0;
+}
+
+
+

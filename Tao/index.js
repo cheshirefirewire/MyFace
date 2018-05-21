@@ -34,9 +34,8 @@ var addEventListeners = function(){
 
   // edit functionality for about section
   aboutList.addEventListener('click', function(e){
-    if(e.target.tagName === 'SPAN') {
+    if($(e.target).hasClass('editAbout')) {
       var userid = $(e.target).parents('ul').find('li input[name="userid"]').val();
-      console.log(userid);
       var fieldToEdit = $(e.target).parent('li').find('input')[0];
       if (fieldToEdit.hasAttribute('readonly')){
         editBuffer[fieldToEdit.name]=fieldToEdit.value;
