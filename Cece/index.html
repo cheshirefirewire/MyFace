@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+  
+    <meta charset="UTF-8">
+    <title>MyFace</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script src="scripts/handlebars-v4.0.11.js"></script>
+    <script src="scripts/index.js" defer></script>
 
   </head>
   <body>
@@ -14,13 +25,13 @@
     </header>
     <main>
       <section class="col-md-8 offset-md-2 top-section">
+    
+        <div id="cover">
+        </div>
 
-        <div class="cover"></div>
-
-        <figure class="profile">
-          <img alt="profile picture" src="assets/images/profile.png" / />
+        <figure id="profile-outer" class="profile">
+          
         </figure>
-
 
         <nav class="col-md-12">
           <ul>
@@ -30,9 +41,87 @@
         </nav>
       </section>
 
+      <section class="col-md-8 offset-md-2 main-content">
+        <div id="about" class="col-md-4"></div>
+        <div id="blog" class="col-md-8"></div>
+      </section>
 
+      <script id="about-template" type="text/x-handlebars-template">
+        <div class="entry">
+          <aside class="common-box">
+            <header>
+              <span class="glyphicon glyphicon-triangle-bottom"></span>about
+            </header>
+            <ul>
+<<<<<<< HEAD
+              <li>
+                name: 
+                <input type="text" name="name" value="{{name}}" readonly>
+                <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>
+                location: 
+                <input type="text" name="location" value="{{location}}" readonly>
+                <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>
+                birthday: 
+                <input type="text" name="birthday" value="{{birthday}}" readonly>
+                <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>
+                occupation: 
+                <input type="text" name="occupation" value="{{occupation}}" readonly>
+                <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>
+                relationship status: 
+                <input type="text" name="relationshipStatus" value="{{relationshipStatus}}" readonly>
+                <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>
+                interested in: 
+                <input type="text" name="interestedIn" value="{{interestedIn}}" readonly>
+=======
+              <li>name: {{name}} 
+                <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>location: {{location}}
+                <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>birthday: {{birthday}}
+               <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>occupation: {{occupation}}
+               <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>relationship status: {{relationshipStatus}}
+               <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+              <li>interested in: {{interestedIn}}
+>>>>>>> 5398098e9158b7126838260d7eb7ce249b4c9821
+                <span class="glyphicon glyphicon-pencil"></span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </script> 
 
-      <p>Cece's MyFace Application</p>
+      <script id="profile-img-template" type="text/x-handlebars-template"> 
+        <img alt="profile picture" src="{{profileImgUrl}}" />
+      </script>
+
+      <script id="cover-img-template" type="text/x-handlebars-template"> 
+        <div class="cover" style="background-image: url('{{coverImgUrl}}')"></div>
+      </script>
+
+      <script id="blog-template" type="text/x-handlebars-template">
+        <div class="blog-container">
+          <h1>Title: {{title}}</h1>
+          <p>Content: {{content}}</p>
+        </div>
+      </script>
+
     </main>
   </body>
 </html>
