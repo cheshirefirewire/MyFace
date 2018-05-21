@@ -1,21 +1,29 @@
 $(document).ready(function(){
 
-	var myData = $.ajax({
+	// var myData = $.ajax({
+	// 	method: 'GET',
+	// 	url: 'http://localhost:3000/user',
+	// 	dataType: 'json',
+	// 	success: function (data) {
+	// 		myData = data;
+	// 	}
+	// }).then(function(data){
+	// 	init();
+	// });
+
+	// var init = function() {
+	// 	userInfoTemp(myData[0]);
+	// 	profImgTemp(myData[0].profileImage);
+	// 	coverImgTemp(myData[0].backgroundImage)
+	// 	addEventListeners();
+	// };
+
+	var getAboutMeData = function() {
+		return $.ajax({
 		method: 'GET',
 		url: 'http://localhost:3000/user',
-		dataType: 'jsonp',
-		success: function (data) {
-			myData = data;
-		}
-	}).then(function(data){
-		init();
-	});
-
-	var init = function() {
-		userInfoTemp(myData[0]);
-		profImgTemp(myData[0].profileImage);
-		coverImgTemp(myData[0].backgroundImage)
-		addEventListeners();
+		dataType: 'json'
+		})
 	};
 
 	var coverImgTemp = function(coverImgData) {
@@ -46,7 +54,7 @@ $(document).ready(function(){
 
 		var templateHtml = template(templateData);
 
-		var placeholder = document.getElementById('about');
+		var placeholder = document.getElementById('about-placeholder');
 		placeholder.innerHTML = templateHtml;
 	};
 
@@ -66,32 +74,50 @@ $(document).ready(function(){
 				fieldToEdit.removeAttr('readonly');
 				fieldToEdit.on('focusout', function(event){
 					fieldToEdit.attr('readonly', 'true');
-					console.log('fieldToEdit value', fieldToEdit.val());
-					console.log('fieldInputValue', fieldInputValue);
-
+					// console.log('fieldToEdit value', fieldToEdit.val());
+					// console.log('fieldInputValue', fieldInputValue);
 					if(fieldToEdit.val() !== fieldInputValue){
 						console.log('updateUserObject');
-        				updateUserObject(fieldToEdit.attr('label'), fieldToEdit.val(), myData);
+        				updateUserObject(fieldToEdit.attr('label'), fieldToEdit.val());
 					}
 				});
 			};
 		});
 	};
 
-	var updateUserObject = function(label, value, myData){
-	  var dataForPassing = {label:value};
+	var updateUserObject = function(label, value){
+	  var dataForPassing = {};
+	  dataForPassing[label] = value;
 	  $.ajax({
-	    method: "PUT",
+	    method: "PATCH",
 	    url: "http://localhost:3000/user/1",
-	    dataType: "jsonp",
-	    data: dataForPassing,
+	    dataType: "json",
+	    data: JSON.stringify(dataForPassing),
 	    contentType: 'application/json',
-	    success: function(msg){
+	    success: function(data){
 	      console.log('dataForPassing', dataForPassing);
-	      console.log('msg',msg);
+	      console.log('data',data);
+	    },
+	    error: function(error){
+	      console.log('dataForPassing error', dataForPassing);
+	      console.log('error', error);
 	    }
 	  })
-	}
+	};
+
+	var aboutMeInit = function() {
+		getAboutMeData().then(function(data){
+			userInfoTemp(data[0]);
+			profImgTemp(data[0].profileImage);
+			coverImgTemp(data[0].backgroundImage)
+			addEventListeners();
+		})
+
+	};
+
+
+router.registerInitHandler('blog', aboutMeInit);
+router.registerInitHandler('gallery', aboutMeInit);
 
 
 });

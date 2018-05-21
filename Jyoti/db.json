@@ -1,43 +1,31 @@
 {
-  "user": [
-    {
-      "id": 1,
-      "name": "Joseddd",
-      "location": "New York",
-      "birthday": "12/24/1992",
-      "occupation": "programmer",
-      "relationshipStatus": "single",
-      "interestedIn": "meditation",
-      "profileImage": "profile.png",
-      "backgroundImage": "cover.jpg",
-      "model": "JoseD"
-    }
-  ],
-  "blogs": [
-    {
-      "id": 1,
-      "title": "this is my blog title",
-      "content": "here is my content"
-    },
-    {
-      "title": "dd",
-      "content": "dd",
-      "id": 2
-    },
-    {
-      "title": "dddd",
-      "content": "dddd",
-      "id": 3
-    },
-    {
-      "title": "zzzz",
-      "content": "zzzz",
-      "id": 4
-    },
-    {
-      "title": "jkjk",
-      "content": "jkjk",
-      "id": 5
-    }
-  ]
+  "user": [{
+    "id": 1,
+    "name": "Joseddd",
+    "location": "New York",
+    "birthday": "12/24/1992",
+    "occupation": "programmer",
+    "relationshipStatus": "single",
+    "interestedIn": "meditation",
+    "profileImage": "profile.png",
+    "backgroundImage": "cover.jpg",
+    "model": "JoseD",
+    "galleryImages": [
+      {"imageUrl":"./gallery-images/dock.jpeg"},
+      {"imageUrl":"./gallery-images/big-waterfall.jpeg"},
+      {"imageUrl":"./gallery-images/forest-lake.jpeg"},
+      {"imageUrl":"./gallery-images/mountain-lake.jpeg"},
+      {"imageUrl":"./gallery-images/mountain-reflection.jpeg"},
+      {"imageUrl":"./gallery-images/trail.jpeg"},
+      {"imageUrl":"./gallery-images/valley.jpeg"},
+      {"imageUrl":"./gallery-images/waterfall.jpeg"}]
+  }],
+  "blogs": [{
+    "id": 1,
+    "title": "this is my blog title",
+    "content": "here is my content",
+    "comments": [{
+      "comment": "my fancy comment"
+    }]
+  }]
 }
