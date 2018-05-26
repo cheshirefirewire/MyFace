@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Tao",
-      "location": "Earth",
+      "location": "Saturn",
       "birthday": "May 5",
       "occupation": "web developer",
       "relationshipStatus": "divine",
@@ -12,27 +12,20 @@
       "profileImg": "./images/profile-sq.png"
     }
   ],
-  "comments": [
+  "blogs": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
-  "safeuser": [
-    {
-      "id": 1,
-      "name": "Tao",
-      "location": "Earth",
-      "birthday": "May 5",
-      "occupation": "web developer",
-      "relationshipStatus": "divine",
-      "interestedIn": "enlightenment",
-      "backgroundImg": "./images/cover.jpg",
-      "profileImg": "./images/profile-sq.png"
+      "userid": 1,
+      "subject": "blog subject or title",
+      "date": "8/27/2017",
+      "body": "blog text contents",
+      "comments": [
+        {
+          "id": 1,
+          "userid": 3,
+          "body": "some comment"
+        }
+      ]
     }
   ]
 }

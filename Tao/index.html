@@ -16,6 +16,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="./index.js" defer></script>
+    <script src="./utility.js" defer></script>
 
     <link rel="stylesheet" href='styles/styles.css' />
 
@@ -50,8 +51,8 @@
 
             <nav class='navbar'>
               <ul class='nav'>
-                <li>blog</li>
-                <li>galleries</li>
+                <li class='link-blog'>blog</li>
+                <li class='link-gallery'>galleries</li>
               </ul>
             </nav>
 
@@ -75,56 +76,18 @@
                     <div id='aboutCollapse' class='collapse show'>
                       <ul class='list-about'>
                         <li><input readonly type="hidden" name='userid' value='{{id}}' /></li>
-                        <li>name: <input readonly type='text' name='name' value='{{name}}' /><span class='editAbout'>&#9998;</span></li>
-                        <li>location: <input readonly type='text' name='location' value='{{location}}' /><span class='editAbout'>&#9998;</span></li>
-                        <li>birthday: <input readonly text='date' name='birthday' value='{{birthday}}' /><span class='editAbout'>&#9998;</span></li>
-                        <li>occupation: <input readonly type='text' name='occupation' value='{{occupation}}' /><span class='editAbout'>&#9998;</span></li>
-                        <li>relationship status: <input readonly type='text' name='relationshipStatus' value='{{relationshipStatus}}' /><span class='editAbout'>&#9998;</span></li>
-                        <li>interested in: <input readonly type='text' name='interestedIn' value='{{interestedIn}}' /><span class='editAbout'>&#9998;</span></li>
+                        <li>name: <input readonly type='text' name='name' value='{{name}}' /><span class='edit-about'>&#9998;</span><span class='save-about'>&#10003;</span></li>
+                        <li>location: <input readonly type='text' name='location' value='{{location}}' /><span class='edit-about'>&#9998;</span><span class='save-about'>&#10003;</span></li>
+                        <li>birthday: <input readonly text='date' name='birthday' value='{{birthday}}' /><span class='edit-about'>&#9998;</span><span class='save-about'>&#10003;</span></li>
+                        <li>occupation: <input readonly type='text' name='occupation' value='{{occupation}}' /><span class='edit-about'>&#9998;</span><span class='save-about'>&#10003;</span></li>
+                        <li>relationship status: <input readonly type='text' name='relationshipStatus' value='{{relationshipStatus}}' /><span class='edit-about'>&#9998;</span><span class='save-about'>&#10003;</span></li>
+                        <li>interested in: <input readonly type='text' name='interestedIn' value='{{interestedIn}}' /><span class='edit-about'>&#9998;</span><span class='save-about'>&#10003;</span></li>
                       </ul>
                     </div>
                   </div>
                 </div>
       
-                <div id='postBox' class='col-xs-12 col-md-7 blog-box-container'>
-
-                  <div class=post-container>
-                      <div class='title-new-post'>
-                        new post...
-                      </div>
-                      <div class='new-post'>
-                        <ul class='new-post-list'>
-                          <li id='new-post-subject'>
-                            <input type='text' class='subject-post' placeholder='topic' />
-                          </li>
-                          <li id='new-post-body'>
-                            <textarea rows=5 class='body-post'></textarea>
-                          </li>
-                        </ul>
-                      </div>
-                  </div>
-
-                  <div class=blog-container>
-                      <div class='title-blog-post'>
-                        blog subject
-                      </div>
-                      <div class='blog-post'>
-                        <ul class='blog-post-list'>
-                          <li id='blog-post-body'>
-                            <div>the body of this blog post</div>
-                          </li>
-                          <li class='blog-post-comment'>
-                            <img class='blog-comment-image' src='./images/profile-small.png' />
-                            <span class='blog-comment-body'>old comment</span>
-                          </li>
-                          <li class='new-blog-post-comment'>
-                            <input type='text' name='blog-comment-new' placeholder='enter your comment here...' />
-                          </li>
-                        </ul>
-
-                      </div>
-                  </div>
-
+                <div id='blogBox' class='col-xs-12 col-md-7 blog-box-container'>
                 </div>
 
             </div>
@@ -137,7 +100,52 @@
     </script>
 
     <!-- handlebars template for blog -->
+    <script id="blog-template" type="text/x-handlebars-template">
+    
+      <div class=post-container>
+          <div class='title-new-post'>
+            new post...
+          </div>
+          <div class='new-post'>
+            <ul class='new-post-list'>
+              <li id='new-post-subject'>
+                <input type='text' class='subject-post' placeholder='topic' />
+              </li>
+              <li id='new-post-body'>
+                <textarea rows=5 class='body-post'></textarea>
+              </li>
+            </ul>
+          </div>
+      </div>
 
+      <div class=blog-container>
+          <div class='title-blog-post'>
+            {{subject}}
+          </div>
+          <div class='blog-post'>
+            <ul class='blog-post-list'>
+              <li><input readonly type="hidden" value='{{id}}' /></li>
+              <li id='blog-post-body'>
+                <div>{{body}}</div>
+              </li>
+              <li class='blog-post-comment'>
+                <img class='blog-comment-image' src='./images/profile-small.png' />
+                <span class='blog-comment-body'>old comment</span>
+              </li>
+              <li class='new-blog-post-comment'>
+                <input type='text' name='blog-comment-new' placeholder='enter your comment here...' />
+              </li>
+            </ul>
+
+          </div>
+      </div>
+    
+    </script>
+
+    <!-- handlebars template for gallery -->
+    <script id="gallery-template" type="text/x-handlebars-template">
+      
+    </script>
 
 
 

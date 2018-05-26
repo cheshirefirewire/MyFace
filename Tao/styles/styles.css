@@ -54,6 +54,7 @@ ul.nav li{
   padding:0 2rem;
   color: #3663A3;
   border-right:1px solid #BDBDBD;
+  cursor:pointer;
 }
 
 ul.nav li:first-child {
@@ -131,7 +132,8 @@ ul.list-about li input[readonly] {
   outline:none;
 }
 
-ul.list-about li:first-child {
+ul.list-about li:first-child,
+ul.blog-post-list li:first-child {
   display:none;
 }
 
@@ -143,6 +145,10 @@ ul.blog-post-list li:last-child {
 ul.list-about span {
   cursor:pointer;
   float:right;
+}
+
+ul.list-about span.save-about {
+  display:none;
 }
 
 .new-post{

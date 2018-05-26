@@ -1,81 +1,87 @@
+var index = (function(){
+
+  getMyData = () => {
+    utility.apiGetData("users", this.initAbout, this.consoleError);
+  };
 
 
-var myData = function(){
-  var myData = $.ajax({
-    method:"GET",
-    dataType:"json",
-    url:"http://localhost:3000/users/",
-    success: function(data){
-      init(data);
-    },
-    error: function(error){
-      console.log("error is ", error);
-    }
-  });
-}
+  getBlogData = () => {
+    utility.apiGetData("blogs", this.initBlog, this.consoleError);
+  };
 
-var init = function(data){
-  entryTemplate(data[0]);
-  addEventListeners();
-}
+  getGalleryData = () => {
 
-var entryTemplate = function(data){
-  var source   = document.getElementById("entry-template").innerHTML;
-  var template = Handlebars.compile(source);
-  var html    = template(data);
-  var placeholder = document.getElementById("main");
-  placeholder.innerHTML = html;
-}
+  };
 
-var addEventListeners = function(){
-  var editBuffer = {};
-  var aboutList = document.querySelector('ul.list-about');
+  initAbout = (data) => {
+    utility.templateCompiler(data[0], "entry-template", "main");
+    this.attachNavLinks();
+    this.addAboutListeners();
+  };
 
+  initBlog = (data) => {
+    utility.templateCompiler(data[0], "blog-template", "blogBox");
+  };
 
-  // edit functionality for about section
-  aboutList.addEventListener('click', function(e){
-    if($(e.target).hasClass('editAbout')) {
-      var userid = $(e.target).parents('ul').find('li input[name="userid"]').val();
-      var fieldToEdit = $(e.target).parent('li').find('input')[0];
-      if (fieldToEdit.hasAttribute('readonly')){
+  attachNavLinks = () => {
+    $('li.link-blog').click(this.getBlogData);
+    $('li.link-gallery').click(this.getGalleryData);
+  };
+
+  addAboutListeners = () => {
+    var editBuffer = {};
+
+    document.querySelector('ul.list-about').addEventListener('click', function(e){
+      
+      var li = $(e.target).parent('li');
+      var fieldToEdit = $(li).find('input')[0];
+      var userid = $(li).parent('ul').find('li input[name="userid"]').val();
+
+      if($(e.target).hasClass('edit-about')) {
         editBuffer[fieldToEdit.name]=fieldToEdit.value;
         fieldToEdit.removeAttribute('readonly');
-      } else {
+        $(li).find(' span.edit-about').hide();
+        $(li).find(' span.save-about').show();
+
+      } else if ($(e.target).hasClass('save-about')) {
         fieldToEdit.setAttribute('readonly', true);
+        $(li).find(' span.save-about').hide();
+        $(li).find(' span.edit-about').show();
+        
         var key = fieldToEdit.name;
         var newValue = fieldToEdit.value;
         var oldValue = editBuffer[key];
+
         if (newValue.trim() !== oldValue.trim()){
           var user = {};
           user[key]=newValue.trim();
-          sendData(user, userid);
+          index.updateAbout(userid, user);
         }
+      } else {
+        return false;
       }
-    }
+    });
+  };
+
+  updateAbout = (userid, data) => {
+    utility.apiPatchData("users", userid, data, consoleSuccess, consoleError)
+  };
+
+  consoleSuccess = (data) => {
+    console.log('successful call returns ', data);
+  };
+
+  consoleError = (data) => {
+    console.log("error is ", error);
+  };
+
+  // initialize page
+  $(document).ready(() => {
+    this.getMyData();
   });
+    
+})();
 
 
-}
-
-var sendData = function(data, userid){
-  var address = "http://localhost:3000/users/"+userid;
-  var xhr = $.ajax({
-    method:'PATCH',
-    data: JSON.stringify(data),
-    dataType: 'json',
-    headers: { 'content-type' : 'application/json'},
-    url:address,
-    success: function(data){
-      console.log('ajax call returns ', data);
-    },
-    error: function(error){
-      console.log("error is ", error);
-    }
-  });
 
 
-}
-
-$(document).ready(function(){
-   myData();
-});
