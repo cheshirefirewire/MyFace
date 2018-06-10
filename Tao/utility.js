@@ -27,6 +27,34 @@ var utility = (function(){
         
       jqXHR.done(successFunction);
       jqXHR.fail(failFunction);
+    },
+
+    apiPatchComments: (directory, id, data, successFunction, failFunction) => {
+      var jqXHR = $.ajax({
+        method:'PATCH',
+        data: JSON.stringify(data),
+        headers: {'content-type' : 'application/json'},
+        url:apiUrl+"/"+directory+"/"+id
+      });
+        
+      jqXHR.done(successFunction);
+      jqXHR.fail(failFunction);
+    },
+
+    apiPostData : (directory, id, data, successFunction, failFunction) => {
+      var jqXHR = $.ajax({
+        method:'POST',
+        data: JSON.stringify(data),
+        headers: {'content-type' : 'application/json'},
+        url:apiUrl+"/"+directory+"/"
+      });
+        
+      jqXHR.done(successFunction);
+      jqXHR.fail(failFunction);
+    },
+
+    findUserId : () => {
+      return parseInt(document.querySelector('.list-about li input[name="userid"]').value.trim());
     }
 
   };
