@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Tao",
+      "location": "Earth",
+      "birthday": "May 5",
+      "occupation": "web developer",
+      "relationshipStatus": "divine",
+      "interestedIn": "enlightenment",
+      "backgroundImg": "./images/cover.jpg",
+      "profileImg": "./images/profile-sq.png",
+      "gallery": [
+        {
+          "imageUrl": "./images/gallery/dock.jpeg"
+        },
+        {
+          "imageUrl": "./images/gallery/big-waterfall.jpeg"
+        },
+        {
+          "imageUrl": "./images/gallery/forest-lake.jpeg"
+        },
+        {
+          "imageUrl": "./images/gallery/mountain-lake.jpeg"
+        },
+        {
+          "imageUrl": "./images/gallery/mountain-reflection.jpeg"
+        },
+        {
+          "imageUrl": "./images/gallery/trail.jpeg"
+        },
+        {
+          "imageUrl": "./images/gallery/valley.jpeg"
+        },
+        {
+          "imageUrl": "./images/gallery/waterfall.jpeg"
+        }
+      ]
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "blog": [
+        {
+          "id": 1,
+          "subject": "new topic",
+          "date": "6/3/2018, 9:48:42 PM",
+          "body": "do you like the Beatles?",
+          "comments": [
+            {
+              "id": 1,
+              "userid": 3,
+              "body": "Love them!"
+            },
+            {
+              "id": 2,
+              "userid": 8,
+              "body": "Best band ever!"
+            },
+            {
+              "id": 3,
+              "userid": 2,
+              "body": "My favs!"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "subject": "fix the id",
+          "date": "6/3/2018, 10:28:26 PM",
+          "body": "had to change the id calculation",
+          "comments": [
+            {
+              "id": 1,
+              "userid": 2,
+              "body": "fixed"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "subject": "global variables",
+          "date": "6/4/2018, 1:57:26 PM",
+          "body": "trying using globals to hold the json results for later processing",
+          "comments": []
+        },
+        {
+          "id": 4,
+          "subject": "utility",
+          "date": "6/4/2018, 2:08:05 PM",
+          "body": "move finduserid to utility",
+          "comments": []
+        }
+      ]
+    }
+  ]
+}
